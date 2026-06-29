@@ -3,7 +3,6 @@ package cn.iocoder.yudao.module.im.job.rtc;
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.quartz.core.handler.JobHandler;
-import cn.iocoder.yudao.framework.tenant.core.job.TenantJob;
 import cn.iocoder.yudao.module.im.framework.config.ImProperties;
 import cn.iocoder.yudao.module.im.service.rtc.ImRtcCallService;
 import jakarta.annotation.Resource;
@@ -32,7 +31,6 @@ public class ImRtcParticipantTimeoutJob implements JobHandler {
      * @return 超时处理数量描述
      */
     @Override
-    @TenantJob
     public String execute(String param) {
         int thresholdMinutes = resolveThresholdMinutes(param);
         int timedOut = rtcCallService.timeoutInvitingParticipants(thresholdMinutes);

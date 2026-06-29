@@ -7,8 +7,6 @@ import cn.iocoder.yudao.framework.common.enums.CommonStatusEnum;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.cache.CacheUtils;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
-import cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.im.controller.admin.manager.sensitiveword.vo.ImSensitiveWordPageReqVO;
 import cn.iocoder.yudao.module.im.controller.admin.manager.sensitiveword.vo.ImSensitiveWordSaveReqVO;
 import cn.iocoder.yudao.module.im.dal.dataobject.sensitiveword.ImSensitiveWordDO;
@@ -87,36 +85,33 @@ public class ImSensitiveWordServiceImpl implements ImSensitiveWordService {
 
                 @Override
                 public ListenableFuture<SensitiveWordBsCache> reload(Long tenantId, SensitiveWordBsCache oldValue) {
-                    // 异步刷新线程独立于业务线程，没有租户上下文；必须显式 TenantUtils.execute 设置，否则租户拦截器会按当前线程的空上下文拼 SQL
-                    return Futures.immediateFuture(TenantUtils.execute(tenantId, () -> {
-                        LocalDateTime currentMax = sensitiveWordMapper.selectMaxUpdateTime(tenantId);
-                        // 没变 → 复用旧实例，避免无谓地重建 trie
-                        if (Objects.equals(oldValue.getMaxUpdateTime(), currentMax)) {
-                            return oldValue;
-                        }
-                        // 变了 → 重新读词库并重建 trie
-                        return loadFresh(tenantId);
-                    }));
+                    LocalDateTime currentMax = sensitiveWordMapper.selectMaxUpdateTime(tenantId);
+                    // 没变 → 复用旧实例，避免无谓地重建 trie
+                    if (Objects.equals(oldValue.getMaxUpdateTime(), currentMax)) {
+                        return Futures.immediateFuture(oldValue);
+                    }
+                    // 变了 → 重新读词库并重建 trie
+                    return Futures.immediateFuture(loadFresh(tenantId));
+                }
                 }
 
             });
 
     private SensitiveWordBsCache loadFresh(Long tenantId) {
-        return TenantUtils.execute(tenantId, () -> {
-            // 先取基线时间再读词库：反过来在两次查询之间出现的新插入会被漏感知
-            LocalDateTime maxUpdateTime = sensitiveWordMapper.selectMaxUpdateTime(tenantId);
-            List<ImSensitiveWordDO> words = sensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus());
-            // 构建敏感词检测器
-            SensitiveWordBs bs = SensitiveWordBs.newInstance()
-                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))
-                    .ignoreCase(true)
-                    .ignoreWidth(true)         // 忽略全/半角
-                    .ignoreNumStyle(true)      // 忽略数字风格（中文/阿拉伯）
-                    .ignoreChineseStyle(true)  // 忽略繁简体
-                    .enableWordCheck(true)
-                    .init();
-            return new SensitiveWordBsCache(bs, maxUpdateTime);
-        });
+        // 先取基线时间再读词库：反过来在两次查询之间出现的新插入会被漏感知
+        LocalDateTime maxUpdateTime = sensitiveWordMapper.selectMaxUpdateTime(tenantId);
+        List<ImSensitiveWordDO> words = sensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus());
+        // 构建敏感词检测器
+        SensitiveWordBs bs = SensitiveWordBs.newInstance()
+                .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))
+                .ignoreCase(true)
+                .ignoreWidth(true)         // 忽略全/半角
+                .ignoreNumStyle(true)      // 忽略数字风格（中文/阿拉伯）
+                .ignoreChineseStyle(true)  // 忽略繁简体
+                .enableWordCheck(true)
+                .init();
+        return new SensitiveWordBsCache(bs, maxUpdateTime);
+    }
     }
 
     /**
@@ -125,11 +120,6 @@ public class ImSensitiveWordServiceImpl implements ImSensitiveWordService {
      * 有租户上下文：仅失效该租户。无租户上下文（如系统级 / 跨租户清理）：兜底失效所有租户。
      */
     private void invalidateSensitiveWordBsCaches() {
-        Long tenantId = TenantContextHolder.getTenantId();
-        if (tenantId != null) {
-            sensitiveWordBsCaches.invalidate(tenantId);
-            return;
-        }
         sensitiveWordBsCaches.invalidateAll();
     }
 
@@ -138,7 +128,7 @@ public class ImSensitiveWordServiceImpl implements ImSensitiveWordService {
         if (StrUtil.isBlank(text)) {
             return;
         }
-        SensitiveWordBs bs = sensitiveWordBsCaches.getUnchecked(TenantContextHolder.getRequiredTenantId()).getBs();
+        SensitiveWordBs bs = sensitiveWordBsCaches.getUnchecked(0L).getBs();
         if (bs.contains(text)) {
             throw exception(MESSAGE_SENSITIVE_WORD_BLOCKED);
         }

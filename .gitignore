@@ -26,6 +26,7 @@ target/
 *.iws
 *.iml
 *.ipr
+*.class
 
 ### NetBeans ###
 nbproject/private/
@@ -53,3 +54,7 @@ application-my.yaml
 /yudao-ui-app/unpackage/
 .DS_Store
 **/.DS_Store
+.agents/*
+yudao-server/src/main/resources/application-*
+.codebuddy
+.vscode

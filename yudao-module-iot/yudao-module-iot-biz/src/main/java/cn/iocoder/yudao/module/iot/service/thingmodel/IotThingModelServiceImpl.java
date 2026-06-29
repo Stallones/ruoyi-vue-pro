@@ -11,7 +11,6 @@ import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.date.LocalDateTimeUtils;
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
 import cn.iocoder.yudao.framework.common.util.object.ObjectUtils;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
 import cn.iocoder.yudao.module.iot.controller.admin.thingmodel.vo.IotThingModelListReqVO;
 import cn.iocoder.yudao.module.iot.controller.admin.thingmodel.vo.IotThingModelPageReqVO;
 import cn.iocoder.yudao.module.iot.controller.admin.thingmodel.vo.IotThingModelSaveReqVO;
@@ -155,7 +154,6 @@ public class IotThingModelServiceImpl implements IotThingModelService {
 
     @Override
     @Cacheable(value = RedisKeyConstants.THING_MODEL_LIST, key = "#productId")
-    @TenantIgnore // 忽略租户信息
     public List<IotThingModelDO> getThingModelListByProductIdFromCache(Long productId) {
         return thingModelMapper.selectListByProductId(productId);
     }
@@ -466,7 +464,6 @@ public class IotThingModelServiceImpl implements IotThingModelService {
     }
 
     @CacheEvict(value = RedisKeyConstants.THING_MODEL_LIST, key = "#productId")
-    @TenantIgnore // 忽略租户信息
     public void deleteThingModelListCache0(Long productId) {
     }
 

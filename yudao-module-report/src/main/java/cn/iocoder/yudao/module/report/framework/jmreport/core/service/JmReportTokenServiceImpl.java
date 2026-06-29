@@ -10,7 +10,6 @@ import cn.iocoder.yudao.framework.common.util.servlet.ServletUtils;
 import cn.iocoder.yudao.framework.security.config.SecurityProperties;
 import cn.iocoder.yudao.framework.security.core.LoginUser;
 import cn.iocoder.yudao.framework.security.core.util.SecurityFrameworkUtils;
-import cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder;
 import cn.iocoder.yudao.framework.web.core.util.WebFrameworkUtils;
 import cn.iocoder.yudao.module.system.enums.permission.RoleCodeEnum;
 import jakarta.servlet.http.HttpServletRequest;
@@ -106,8 +105,6 @@ public class JmReportTokenServiceImpl implements JmReportTokenServiceI {
         // TODO 如下的实现不算特别优雅，主要咱是不想搞的太复杂，所以参考对应的 Filter 先实现了
 
         // ① 参考 TokenAuthenticationFilter 的认证逻辑（Security 的上下文清理，交给 Spring Security 完成）
-        // 目的：实现基于 JmReport 前端传递的 token，实现认证
-        TenantContextHolder.setIgnore(true); // 忽略租户，保证可查询到 token 信息
         LoginUser user = null;
         try {
             OAuth2AccessTokenCheckRespDTO accessToken = oauth2TokenApi.checkAccessToken(token);
@@ -123,22 +120,15 @@ public class JmReportTokenServiceImpl implements JmReportTokenServiceI {
             return null;
         }
         SecurityFrameworkUtils.setLoginUser(user, WebFrameworkUtils.getRequest());
-
-        // ② 参考 TenantContextWebFilter 实现（Tenant 的上下文清理，交给 TenantContextWebFilter 完成）
-        // 目的：基于 LoginUser 获得到的租户编号，设置到 Tenant 上下文，避免查询数据库时的报错
-        TenantContextHolder.setIgnore(false);
-        TenantContextHolder.setTenantId(user.getTenantId());
         return user;
     }
 
     @Override
     public String[] getRoles(String token) {
-        // 设置租户上下文。原因是：/jmreport/** 纯前端地址，不会走 buildLoginUserByToken 逻辑
         LoginUser loginUser = SecurityFrameworkUtils.getLoginUser();
         if (loginUser == null) {
             return null;
         }
-        TenantContextHolder.setTenantId(loginUser.getTenantId());
 
         // 参见文档 https://help.jeecg.com/jimureport/prodSafe.html 文档
         // 适配：如果是本系统的管理员，则转换成 jimu 报表的管理员
@@ -149,22 +139,15 @@ public class JmReportTokenServiceImpl implements JmReportTokenServiceI {
 
     @Override
     public String getTenantId() {
-        // 补充说明：不能直接通过 TenantContext 获取，因为 jimu 报表前端请求时，没有带上 tenant-id Header
-        LoginUser loginUser = SecurityFrameworkUtils.getLoginUser();
-        if (loginUser == null) {
-            return null;
-        }
-        return StrUtil.toStringOrNull(loginUser.getTenantId());
+        return null;
     }
 
     @Override
     public String[] getPermissions(String token) {
-        // 设置租户上下文
         LoginUser loginUser = SecurityFrameworkUtils.getLoginUser();
         if (loginUser == null) {
             return null;
         }
-        TenantContextHolder.setTenantId(loginUser.getTenantId());
 
         // 参见文档 https://help.jimureport.com/prodSafe/ 文档
         // 适配：如果是本系统的管理员，则返回积木报表（仪表盘/大屏设计器）的所有权限指令

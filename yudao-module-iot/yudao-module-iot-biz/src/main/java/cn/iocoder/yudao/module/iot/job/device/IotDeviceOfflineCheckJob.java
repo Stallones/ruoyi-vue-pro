@@ -3,7 +3,6 @@ package cn.iocoder.yudao.module.iot.job.device;
 import cn.hutool.core.collection.CollUtil;
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
 import cn.iocoder.yudao.framework.quartz.core.handler.JobHandler;
-import cn.iocoder.yudao.framework.tenant.core.job.TenantJob;
 import cn.iocoder.yudao.module.iot.core.enums.device.IotDeviceStateEnum;
 import cn.iocoder.yudao.module.iot.core.mq.message.IotDeviceMessage;
 import cn.iocoder.yudao.module.iot.dal.dataobject.device.IotDeviceDO;
@@ -42,7 +41,6 @@ public class IotDeviceOfflineCheckJob implements JobHandler {
     private IotDeviceMessageService deviceMessageService;
 
     @Override
-    @TenantJob
     public String execute(String param) {
         // 1.1 获得在线设备列表
         List<IotDeviceDO> devices = deviceService.getDeviceListByState(IotDeviceStateEnum.ONLINE.getState());

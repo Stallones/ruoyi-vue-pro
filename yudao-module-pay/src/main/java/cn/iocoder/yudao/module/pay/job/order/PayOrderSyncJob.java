@@ -2,7 +2,6 @@ package cn.iocoder.yudao.module.pay.job.order;
 
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.quartz.core.handler.JobHandler;
-import cn.iocoder.yudao.framework.tenant.core.job.TenantJob;
 import cn.iocoder.yudao.module.pay.service.order.PayOrderService;
 import org.springframework.stereotype.Component;
 
@@ -33,7 +32,6 @@ public class PayOrderSyncJob implements JobHandler {
     private PayOrderService orderService;
 
     @Override
-    @TenantJob
     public String execute(String param) {
         LocalDateTime minCreateTime = LocalDateTime.now().minus(CREATE_TIME_DURATION_BEFORE);
         int count = orderService.syncOrder(minCreateTime);

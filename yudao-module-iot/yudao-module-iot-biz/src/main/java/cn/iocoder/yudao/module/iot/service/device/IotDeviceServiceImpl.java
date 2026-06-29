@@ -11,8 +11,6 @@ import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
 import cn.iocoder.yudao.framework.common.util.validation.ValidationUtils;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.iot.controller.admin.device.vo.device.*;
 import cn.iocoder.yudao.module.iot.core.biz.dto.IotDeviceAuthReqDTO;
 import cn.iocoder.yudao.module.iot.core.biz.dto.IotSubDeviceRegisterFullReqDTO;
@@ -115,9 +113,9 @@ public class IotDeviceServiceImpl implements IotDeviceService {
     private void validateCreateDeviceParam(String productKey, String deviceName,
                                            Long gatewayId, IotProductDO product) {
         // 校验设备名称在同一产品下是否唯一
-        TenantUtils.executeIgnore(() -> {
+        {
             if (deviceMapper.selectByProductKeyAndDeviceName(productKey, deviceName) != null) {
-                throw exception(DEVICE_NAME_EXISTS);
+                throw exception(DEVICE_NAME_EXISTS;
             }
         });
         // 校验父设备是否为合法网关
@@ -279,14 +277,12 @@ public class IotDeviceServiceImpl implements IotDeviceService {
 
     @Override
     @Cacheable(value = RedisKeyConstants.DEVICE, key = "#id", unless = "#result == null")
-    @TenantIgnore // 忽略租户信息
     public IotDeviceDO getDeviceFromCache(Long id) {
         return deviceMapper.selectById(id);
     }
 
     @Override
     @Cacheable(value = RedisKeyConstants.DEVICE, key = "#productKey + '_' + #deviceName", unless = "#result == null")
-    @TenantIgnore // 忽略租户信息，跨租户 productKey + deviceName 是唯一的
     public IotDeviceDO getDeviceFromCache(String productKey, String deviceName) {
         return deviceMapper.selectByProductKeyAndDeviceName(productKey, deviceName);
     }
@@ -811,8 +807,7 @@ public class IotDeviceServiceImpl implements IotDeviceService {
     @Override
     public IotDeviceRegisterRespDTO registerDevice(IotDeviceRegisterReqDTO reqDTO) {
         // 1.1 校验产品
-        IotProductDO product = TenantUtils.executeIgnore(() ->
-                productService.getProductByProductKey(reqDTO.getProductKey()));
+        IotProductDO product = productService.getProductByProductKey(reqDTO.getProductKey());
         if (product == null) {
             throw exception(PRODUCT_NOT_EXISTS);
         }
@@ -825,9 +820,9 @@ public class IotDeviceServiceImpl implements IotDeviceService {
                 product.getProductSecret(), reqDTO.getSign())) {
             throw exception(DEVICE_REGISTER_SECRET_INVALID);
         }
-        return TenantUtils.execute(product.getTenantId(), () -> {
+        return {
             // 1.4 校验设备是否已存在（已存在则不允许重复注册）
-            IotDeviceDO device = getSelf().getDeviceFromCache(reqDTO.getProductKey(), reqDTO.getDeviceName());
+            IotDeviceDO device = getSelf().getDeviceFromCache(reqDTO.getProductKey(), reqDTO.getDeviceName();
             if (device != null) {
                 throw exception(DEVICE_REGISTER_ALREADY_EXISTS);
             }
@@ -850,8 +845,7 @@ public class IotDeviceServiceImpl implements IotDeviceService {
         IotDeviceDO gatewayDevice = getSelf().getDeviceFromCache(reqDTO.getGatewayProductKey(), reqDTO.getGatewayDeviceName());
 
         // 2. 遍历注册每个子设备
-        return TenantUtils.execute(gatewayDevice.getTenantId(), () ->
-                registerSubDevices0(gatewayDevice, reqDTO.getSubDevices()));
+        return registerSubDevices0(gatewayDevice, reqDTO.getSubDevices());
     }
 
     @Override

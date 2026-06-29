@@ -6,7 +6,6 @@ import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.common.enums.RpcConstants;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
 import cn.iocoder.yudao.module.iot.core.biz.IotDeviceCommonApi;
 import cn.iocoder.yudao.module.iot.core.biz.dto.*;
 import cn.iocoder.yudao.module.iot.core.topic.auth.IotDeviceRegisterReqDTO;
@@ -82,7 +81,6 @@ public class IoTDeviceApiImpl implements IotDeviceCommonApi {
     @Override
     @PostMapping(RpcConstants.RPC_API_PREFIX + "/iot/modbus/config-list")
     @PermitAll
-    @TenantIgnore
     public CommonResult<List<IotModbusDeviceConfigRespDTO>> getModbusDeviceConfigList(
             @RequestBody IotModbusDeviceConfigListReqDTO listReqDTO) {
         // 1. 获取 Modbus 连接配置

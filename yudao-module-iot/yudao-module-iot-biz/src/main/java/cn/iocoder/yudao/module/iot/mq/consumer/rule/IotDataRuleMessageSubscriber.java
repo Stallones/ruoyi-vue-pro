@@ -1,6 +1,5 @@
 package cn.iocoder.yudao.module.iot.mq.consumer.rule;
 
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.iot.core.messagebus.core.IotMessageBus;
 import cn.iocoder.yudao.module.iot.core.messagebus.core.IotMessageSubscriber;
 import cn.iocoder.yudao.module.iot.core.mq.message.IotDeviceMessage;
@@ -42,7 +41,7 @@ public class IotDataRuleMessageSubscriber implements IotMessageSubscriber<IotDev
 
     @Override
     public void onMessage(IotDeviceMessage message) {
-        TenantUtils.execute(message.getTenantId(), () -> dataRuleService.executeDataRule(message));
+        dataRuleService.executeDataRule(message);
     }
 
 }

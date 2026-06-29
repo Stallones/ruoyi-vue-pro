@@ -9,7 +9,6 @@ import cn.hutool.http.HttpUtil;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.ai.controller.admin.chat.vo.message.AiChatMessagePageReqVO;
 import cn.iocoder.yudao.module.ai.controller.admin.chat.vo.message.AiChatMessageRespVO;
 import cn.iocoder.yudao.module.ai.controller.admin.chat.vo.message.AiChatMessageSendReqVO;
@@ -242,8 +241,8 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
             // 仅首次：返回知识库、联网搜索
             if (StrUtil.isEmpty(contentBuffer)) {
                 if (firstExecuteFlag.compareAndSet(true, false)) { // CAS 操作，确保仅执行一次
-                    Map<Long, AiKnowledgeDocumentDO> documentMap = TenantUtils.executeIgnore(() -> knowledgeDocumentService.getKnowledgeDocumentMap(
-                            convertSet(knowledgeSegments, AiKnowledgeSegmentSearchRespBO::getDocumentId)));
+                    Map<Long, AiKnowledgeDocumentDO> documentMap = knowledgeDocumentService.getKnowledgeDocumentMap(
+                            convertSet(knowledgeSegments, AiKnowledgeSegmentSearchRespBO::getDocumentId));
                     cacheSegments.set(BeanUtils.toBean(knowledgeSegments, AiChatMessageRespVO.KnowledgeSegment.class, segment -> {
                         AiKnowledgeDocumentDO document = documentMap.get(segment.getDocumentId());
                         segment.setDocumentName(document != null ? document.getName() : null);
@@ -270,17 +269,17 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
                             .setSegments(cacheSegments.get()).setWebSearchPages(cacheWebSearchPages.get()))); // 知识库 + 联网搜索
         }).doOnComplete(() -> {
             // 忽略租户，因为 Flux 异步无法透传租户
-            TenantUtils.executeIgnore(() -> chatMessageMapper.updateById(
+            chatMessageMapper.updateById(
                     new AiChatMessageDO().setId(assistantMessage.getId()).setContent(contentBuffer.toString())
-                            .setReasoningContent(reasoningContentBuffer.toString())));
+                            .setReasoningContent(reasoningContentBuffer.toString()));
         }).doOnError(throwable -> {
             log.error("[sendChatMessageStream][userId({}) sendReqVO({}) 发生异常]", userId, sendReqVO, throwable);
             // 忽略租户，因为 Flux 异步无法透传租户
-            TenantUtils.executeIgnore(() -> {
+            {
                 // 如果有内容，则更新内容
                 if (StrUtil.isNotEmpty(contentBuffer)) {
                     chatMessageMapper.updateById(new AiChatMessageDO().setId(assistantMessage.getId())
-                            .setContent(contentBuffer.toString()).setReasoningContent(reasoningContentBuffer.toString()));
+                            .setContent(contentBuffer.toString()).setReasoningContent(reasoningContentBuffer.toString());
                 } else {
                     // 否则，则进行删除
                     chatMessageMapper.deleteById(assistantMessage.getId());
@@ -289,11 +288,11 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
         }).doOnCancel(() -> {
             log.info("[sendChatMessageStream][userId({}) sendReqVO({}) 取消请求]", userId, sendReqVO);
             // 忽略租户，因为 Flux 异步无法透传租户
-            TenantUtils.executeIgnore(() -> {
+            {
                 // 如果有内容，则更新内容
                 if (StrUtil.isNotEmpty(contentBuffer)) {
                     chatMessageMapper.updateById(new AiChatMessageDO().setId(assistantMessage.getId())
-                            .setContent(contentBuffer.toString()).setReasoningContent(reasoningContentBuffer.toString()));
+                            .setContent(contentBuffer.toString()).setReasoningContent(reasoningContentBuffer.toString());
                 } else {
                     // 否则，则进行删除
                     chatMessageMapper.deleteById(assistantMessage.getId());

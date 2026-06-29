@@ -3,7 +3,6 @@ package cn.iocoder.yudao.module.iot.job.ota;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.quartz.core.handler.JobHandler;
-import cn.iocoder.yudao.framework.tenant.core.job.TenantJob;
 import cn.iocoder.yudao.module.iot.core.enums.device.IotDeviceStateEnum;
 import cn.iocoder.yudao.module.iot.dal.dataobject.device.IotDeviceDO;
 import cn.iocoder.yudao.module.iot.dal.dataobject.ota.IotOtaFirmwareDO;
@@ -37,7 +36,6 @@ public class IotOtaUpgradeJob implements JobHandler {
     private IotDeviceService deviceService;
 
     @Override
-    @TenantJob
     public String execute(String param) throws Exception {
         // 1. 查询待推送的 OTA 升级记录
         List<IotOtaTaskRecordDO> records = otaTaskRecordService.getOtaRecordListByStatus(

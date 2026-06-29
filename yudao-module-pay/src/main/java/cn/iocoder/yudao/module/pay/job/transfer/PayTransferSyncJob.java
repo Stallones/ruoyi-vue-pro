@@ -2,7 +2,6 @@ package cn.iocoder.yudao.module.pay.job.transfer;
 
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.quartz.core.handler.JobHandler;
-import cn.iocoder.yudao.framework.tenant.core.job.TenantJob;
 import cn.iocoder.yudao.module.pay.service.transfer.PayTransferService;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +21,6 @@ public class PayTransferSyncJob implements JobHandler {
     private PayTransferService transferService;
 
     @Override
-    @TenantJob
     public String execute(String param) {
         int count = transferService.syncTransfer();
         return StrUtil.format("同步转账订单 {} 个", count);

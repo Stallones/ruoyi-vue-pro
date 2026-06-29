@@ -7,7 +7,6 @@ import cn.iocoder.yudao.module.system.controller.admin.permission.vo.menu.MenuSa
 import cn.iocoder.yudao.module.system.dal.dataobject.permission.MenuDO;
 import cn.iocoder.yudao.module.system.dal.mysql.permission.MenuMapper;
 import cn.iocoder.yudao.module.system.enums.permission.MenuTypeEnum;
-import cn.iocoder.yudao.module.system.service.tenant.TenantService;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Import;
@@ -42,8 +41,6 @@ public class MenuServiceImplTest extends BaseDbUnitTest {
 
     @MockitoBean
     private PermissionService permissionService;
-    @MockitoBean
-    private TenantService tenantService;
 
     @Test
     public void testCreateMenu_success() {
@@ -164,27 +161,20 @@ public class MenuServiceImplTest extends BaseDbUnitTest {
 
     @Test
     public void testGetMenuListByTenant() {
-        // mock 数据
+        // mock 数据（删除多租户后，不再过滤菜单）
         MenuDO menu100 = randomPojo(MenuDO.class, o -> o.setId(100L).setStatus(CommonStatusEnum.ENABLE.getStatus()));
         menuMapper.insert(menu100);
         MenuDO menu101 = randomPojo(MenuDO.class, o -> o.setId(101L).setStatus(CommonStatusEnum.DISABLE.getStatus()));
         menuMapper.insert(menu101);
         MenuDO menu102 = randomPojo(MenuDO.class, o -> o.setId(102L).setStatus(CommonStatusEnum.ENABLE.getStatus()));
         menuMapper.insert(menu102);
-        // mock 过滤菜单
-        Set<Long> menuIds = asSet(100L, 101L);
-        doNothing().when(tenantService).handleTenantMenu(argThat(handler -> {
-            handler.handle(menuIds);
-            return true;
-        }));
         // 准备参数
         MenuListReqVO reqVO = new MenuListReqVO().setStatus(CommonStatusEnum.ENABLE.getStatus());
 
         // 调用
         List<MenuDO> result = menuService.getMenuListByTenant(reqVO);
-        // 断言
-        assertEquals(1, result.size());
-        assertPojoEquals(menu100, result.get(0));
+        // 断言（所有启用状态的菜单都返回）
+        assertEquals(2, result.size());
     }
 
     @Test

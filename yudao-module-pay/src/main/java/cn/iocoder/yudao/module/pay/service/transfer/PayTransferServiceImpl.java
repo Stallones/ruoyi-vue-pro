@@ -10,7 +10,6 @@ import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
 import cn.iocoder.yudao.module.pay.framework.pay.core.client.PayClient;
 import cn.iocoder.yudao.module.pay.framework.pay.core.client.dto.transfer.PayTransferRespDTO;
 import cn.iocoder.yudao.module.pay.framework.pay.core.client.dto.transfer.PayTransferUnifiedReqDTO;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.pay.api.transfer.dto.PayTransferCreateReqDTO;
 import cn.iocoder.yudao.module.pay.api.transfer.dto.PayTransferCreateRespDTO;
 import cn.iocoder.yudao.module.pay.controller.admin.transfer.vo.PayTransferPageReqVO;
@@ -327,7 +326,7 @@ public class PayTransferServiceImpl implements PayTransferService {
         // 校验渠道是否有效
         PayChannelDO channel = channelService.validPayChannel(channelId);
         // 通知转账结果给对应的业务
-        TenantUtils.execute(channel.getTenantId(), () -> getSelf().notifyTransfer(channel, notify));
+        getSelf().notifyTransfer(channel, notify);
     }
 
     /**

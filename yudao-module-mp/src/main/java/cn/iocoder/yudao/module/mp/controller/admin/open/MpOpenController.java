@@ -2,8 +2,6 @@ package cn.iocoder.yudao.module.mp.controller.admin.open;
 
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.StrUtil;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.mp.controller.admin.open.vo.MpOpenCheckSignatureReqVO;
 import cn.iocoder.yudao.module.mp.controller.admin.open.vo.MpOpenHandleMessageReqVO;
 import cn.iocoder.yudao.module.mp.dal.dataobject.account.MpAccountDO;
@@ -43,7 +41,6 @@ public class MpOpenController {
      */
     @Operation(summary = "处理消息")
     @PostMapping(value = "/{appId}", produces = "application/xml; charset=UTF-8")
-    @TenantIgnore
     public String handleMessage(@PathVariable("appId") String appId,
                                 @RequestBody String content,
                                 MpOpenHandleMessageReqVO reqVO) {
@@ -54,8 +51,7 @@ public class MpOpenController {
         Assert.notNull(account, "公众号 appId({}) 不存在", appId);
         try {
             MpContextHolder.setAppId(appId);
-            return TenantUtils.execute(account.getTenantId(),
-                    () -> handleMessage0(appId, content, reqVO));
+            return handleMessage0(appId, content, reqVO);
         } finally {
             MpContextHolder.clear();
         }
@@ -68,7 +64,6 @@ public class MpOpenController {
      */
     @Operation(summary = "校验签名") // 参见
     @GetMapping(value = "/{appId}", produces = "text/plain;charset=utf-8")
-    @TenantIgnore
     public String checkSignature(@PathVariable("appId") String appId,
                                  MpOpenCheckSignatureReqVO reqVO) {
         log.info("[checkSignature][appId({}) 接收到来自微信服务器的认证消息({})]", appId, reqVO);

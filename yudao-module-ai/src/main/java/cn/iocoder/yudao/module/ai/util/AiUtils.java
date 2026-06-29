@@ -5,7 +5,6 @@ import cn.hutool.core.util.ObjUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.common.util.collection.SetUtils;
 import cn.iocoder.yudao.framework.security.core.util.SecurityFrameworkUtils;
-import cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder;
 import cn.iocoder.yudao.module.ai.enums.model.AiPlatformEnum;
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import org.springaicommunity.moonshot.MoonshotChatOptions;
@@ -33,7 +32,6 @@ import java.util.*;
 public class AiUtils {
 
     public static final String TOOL_CONTEXT_LOGIN_USER = "LOGIN_USER";
-    public static final String TOOL_CONTEXT_TENANT_ID = "TENANT_ID";
 
     /**
      * 通义千问支持多模态的模型
@@ -129,7 +127,6 @@ public class AiUtils {
     public static Map<String, Object> buildCommonToolContext() {
         Map<String, Object> context = new HashMap<>();
         context.put(TOOL_CONTEXT_LOGIN_USER, SecurityFrameworkUtils.getLoginUser());
-        context.put(TOOL_CONTEXT_TENANT_ID, TenantContextHolder.getTenantId());
         return context;
     }
 

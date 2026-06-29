@@ -5,7 +5,6 @@ import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.ObjUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.quartz.core.handler.JobHandler;
-import cn.iocoder.yudao.framework.tenant.core.job.TenantJob;
 import cn.iocoder.yudao.module.statistics.service.trade.TradeStatisticsService;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +28,6 @@ public class TradeStatisticsJob implements JobHandler {
      * @return 统计结果
      */
     @Override
-    @TenantJob
     public String execute(String param) {
         // 默认昨日
         param = ObjUtil.defaultIfBlank(param, "1");

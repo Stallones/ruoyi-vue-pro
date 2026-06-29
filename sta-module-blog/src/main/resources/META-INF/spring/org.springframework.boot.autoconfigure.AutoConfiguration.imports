@@ -1,0 +1,2 @@
+com.sta.module.blog.framework.web.config.BlogWebConfiguration
+com.sta.module.blog.framework.web.config.BlogMybatisAutoConfiguration

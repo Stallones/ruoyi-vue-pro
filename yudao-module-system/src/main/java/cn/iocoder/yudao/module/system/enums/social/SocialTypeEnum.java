@@ -23,6 +23,18 @@ public enum SocialTypeEnum implements ArrayValuable<Integer> {
      */
     GITEE(10, "GITEE"),
     /**
+     * QQ
+     *
+     * @see <a href="https://wiki.connect.qq.com/">接入文档</a>
+     */
+    QQ(21, "QQ"),
+    /**
+     * GitHub
+     *
+     * @see <a href="https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps">接入文档</a>
+     */
+    GITHUB(22, "GITHUB"),
+    /**
      * 钉钉
      *
      * @see <a href="https://developers.dingtalk.com/document/app/obtain-identity-credentials">接入文档</a>

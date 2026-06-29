@@ -1,7 +1,6 @@
 package cn.iocoder.yudao.module.iot.mq.consumer.device;
 
 import cn.hutool.core.util.ObjectUtil;
-import cn.iocoder.yudao.framework.tenant.core.util.TenantUtils;
 import cn.iocoder.yudao.module.iot.core.enums.IotDeviceMessageMethodEnum;
 import cn.iocoder.yudao.module.iot.core.enums.device.IotDeviceStateEnum;
 import cn.iocoder.yudao.module.iot.core.messagebus.core.IotMessageBus;
@@ -62,9 +61,9 @@ public class IotDeviceMessageSubscriber implements IotMessageSubscriber<IotDevic
             return;
         }
 
-        TenantUtils.execute(message.getTenantId(), () -> {
+        {
             // 1.1 更新设备的最后时间
-            IotDeviceDO device = deviceService.validateDeviceExistsFromCache(message.getDeviceId());
+            IotDeviceDO device = deviceService.validateDeviceExistsFromCache(message.getDeviceId();
             devicePropertyService.updateDeviceReportTimeAsync(device.getId(), LocalDateTime.now());
             // 1.2 更新设备的连接 server
             devicePropertyService.updateDeviceServerIdAsync(device.getId(), message.getServerId());

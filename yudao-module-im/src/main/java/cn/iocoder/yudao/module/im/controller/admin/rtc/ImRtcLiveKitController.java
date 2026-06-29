@@ -3,7 +3,6 @@ package cn.iocoder.yudao.module.im.controller.admin.rtc;
 import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
-import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
 import cn.iocoder.yudao.module.im.framework.rtc.core.LiveKitClient;
 import cn.iocoder.yudao.module.im.framework.rtc.core.LiveKitWebhookEventDTO;
 import cn.iocoder.yudao.module.im.service.rtc.ImRtcCallService;
@@ -48,7 +47,6 @@ public class ImRtcLiveKitController {
     @PostMapping("/webhook")
     @Operation(summary = "LiveKit Webhook 回调；接收成员离开 / 房间结束等事件做业务态兜底清理")
     @PermitAll
-    @TenantIgnore
     public CommonResult<Boolean> webhook(HttpServletRequest request, @RequestBody String rawBody) {
         // 1.1 校验签名；伪造请求直接 200 但忽略，避免给攻击者反馈
         if (!liveKitClient.verifyWebhookSignature(request.getHeader("Authorization"), rawBody)) {

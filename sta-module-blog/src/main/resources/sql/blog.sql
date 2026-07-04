@@ -73,13 +73,17 @@ CREATE TABLE `blog_category` (
 DROP TABLE IF EXISTS `blog_comment`;
 CREATE TABLE `blog_comment` (
     `id` bigint NOT NULL AUTO_INCREMENT COMMENT '评论ID',
-    `type` varchar(8) NOT NULL DEFAULT 'CMT' COMMENT '类型（20评论 21回复）',
+    `type` tinyint NOT NULL DEFAULT 20 COMMENT '类型（20评论 21回复）',
     `article_id` bigint NOT NULL COMMENT '文章ID',
-    `parent_id` bigint DEFAULT 0 COMMENT '父级ID（RE必填，指向被回复的评论/回复）',
+    `parent_id` bigint DEFAULT 0 COMMENT '父级ID（保留层级关系，当前业务不查）',
+    `root_id` bigint DEFAULT 0 COMMENT '根节点ID（顶级评论为0，回复指向根评论）',
     `content` text COMMENT '内容',
     `user_id` bigint NOT NULL COMMENT '用户ID',
     `to_user_id` bigint DEFAULT 0 COMMENT '被回复用户ID',
     `status` tinyint NOT NULL DEFAULT 0 COMMENT '是否过审（0否 1是）',
+    `ip_location` varchar(64) DEFAULT '' COMMENT 'IP属地',
+    `browser` varchar(64) DEFAULT '' COMMENT '浏览器',
+    `os` varchar(64) DEFAULT '' COMMENT '操作系统',
 
     `creator` varchar(64) DEFAULT '' COMMENT '创建者',
     `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -87,7 +91,8 @@ CREATE TABLE `blog_comment` (
     `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
     PRIMARY KEY (`id`),
-    KEY `idx_article_id` (`type`, `article_id`),
+    KEY `idx_article_type` (`article_id`, `type`),
+    KEY `idx_root_id` (`root_id`),
     KEY `idx_user_id` (`user_id`),
     KEY `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='博客文章评论表';
@@ -96,12 +101,16 @@ CREATE TABLE `blog_comment` (
 DROP TABLE IF EXISTS `blog_message`;
 CREATE TABLE `blog_message` (
     `id` bigint NOT NULL AUTO_INCREMENT COMMENT '留言ID',
-    `type` varchar(8) NOT NULL DEFAULT 'MSG' COMMENT '类型（30留言 31回复）',
-    `parent_id` bigint DEFAULT 0 COMMENT '父级ID（RE必填，指向被回复的留言/回复）',
+    `type` tinyint NOT NULL DEFAULT 30 COMMENT '类型（30留言 31回复）',
+    `parent_id` bigint DEFAULT 0 COMMENT '父级ID（保留层级关系，当前业务不查）',
+    `root_id` bigint DEFAULT 0 COMMENT '根节点ID（顶级留言为0，回复指向根留言）',
     `content` text COMMENT '内容',
     `user_id` bigint NOT NULL COMMENT '用户ID',
     `to_user_id` bigint DEFAULT 0 COMMENT '被回复用户ID',
     `status` tinyint NOT NULL DEFAULT 0 COMMENT '是否通过（0否 1是）',
+    `ip_location` varchar(64) DEFAULT '' COMMENT 'IP属地',
+    `browser` varchar(64) DEFAULT '' COMMENT '浏览器',
+    `os` varchar(64) DEFAULT '' COMMENT '操作系统',
 
     `creator` varchar(64) DEFAULT '' COMMENT '创建者',
     `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -110,6 +119,7 @@ CREATE TABLE `blog_message` (
     `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
     PRIMARY KEY (`id`),
     KEY `idx_type` (`type`),
+    KEY `idx_root_id` (`root_id`),
     KEY `idx_status` (`status`),
     KEY `idx_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='博客留言表';
@@ -216,6 +226,31 @@ CREATE TABLE `blog_website_info` (
     `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='博客网站信息表';
+
+
+DROP TABLE IF EXISTS `blog_user`;
+CREATE TABLE `blog_user` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
+  `password` varchar(100) NOT NULL DEFAULT '' COMMENT '密码',
+  `status` tinyint NOT NULL COMMENT '状态',
+  `register_ip` varchar(32) NOT NULL COMMENT '注册 IP',
+  `login_ip` varchar(50) DEFAULT '' COMMENT '最后登录IP',
+  `login_date` datetime DEFAULT NULL COMMENT '最后登录时间',
+  `nickname` varchar(30) NOT NULL DEFAULT '' COMMENT '用户昵称',
+  `avatar` varchar(512) NOT NULL DEFAULT '' COMMENT '头像',
+  `sex` tinyint DEFAULT '0' COMMENT '用户性别',
+
+  `tenant_id` bigint NOT NULL DEFAULT '0' COMMENT '租户编号',
+  `creator` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updater` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
+
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `uk_email` (`email`, `deleted`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客用户';
 
 -- =============================================
 -- 数据迁移 SQL（从旧表迁移到新表）

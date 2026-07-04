@@ -1,7 +1,6 @@
 package com.sta.module.blog.framework.web.config;
 
-import com.sta.module.blog.enums.ArchiveTypeEnum;
-import com.sta.module.blog.enums.BlogTypeEnum;
+import com.sta.module.blog.enums.TypeEnum;
 import io.swagger.v3.oas.models.media.Schema;
 import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springdoc.core.customizers.OperationCustomizer;
@@ -60,19 +59,12 @@ public class BlogWebConfiguration {
 
     /** 构建枚举元数据注入 customizer */
     private static OpenApiCustomizer buildEnumCustomizer() {
-        List<Integer> btValues = Arrays.stream(BlogTypeEnum.values())
-                .map(BlogTypeEnum::getValue).toList();
-        List<String> btVarnames = Arrays.stream(BlogTypeEnum.values())
-                .map(BlogTypeEnum::getEnglishName).toList();
-        List<String> btDescriptions = Arrays.stream(BlogTypeEnum.values())
-                .map(BlogTypeEnum::getName).toList();
-
-        List<String> atValues = Arrays.stream(ArchiveTypeEnum.values())
-                .map(ArchiveTypeEnum::getValue).toList();
-        List<String> atVarnames = Arrays.stream(ArchiveTypeEnum.values())
-                .map(ArchiveTypeEnum::getEnglishName).toList();
-        List<String> atDescriptions = Arrays.stream(ArchiveTypeEnum.values())
-                .map(ArchiveTypeEnum::getName).toList();
+        List<Integer> btValues = Arrays.stream(TypeEnum.values())
+                .map(TypeEnum::getValue).toList();
+        List<String> btVarnames = Arrays.stream(TypeEnum.values())
+                .map(TypeEnum::getEnglishName).toList();
+        List<String> btDescriptions = Arrays.stream(TypeEnum.values())
+                .map(TypeEnum::getName).toList();
 
         return openApi -> {
             if (openApi.getComponents() == null || openApi.getComponents().getSchemas() == null) {
@@ -84,13 +76,7 @@ public class BlogWebConfiguration {
                     ._enum(btValues);
             btSchema.addExtension("x-enum-varnames", btVarnames);
             btSchema.addExtension("x-enum-descriptions", btDescriptions);
-            openApi.getComponents().getSchemas().put("BlogTypeEnum", btSchema);
-
-            Schema atSchema = new Schema<>().type("string")
-                    ._enum(atValues);
-            atSchema.addExtension("x-enum-varnames", atVarnames);
-            atSchema.addExtension("x-enum-descriptions", atDescriptions);
-            openApi.getComponents().getSchemas().put("ArchiveTypeEnum", atSchema);
+            openApi.getComponents().getSchemas().put("TypeEnum", btSchema);
 
             // 1. 收集内联 Schema 并注入扩展
             List<Schema> allSchemas = new ArrayList<>();
@@ -109,7 +95,6 @@ public class BlogWebConfiguration {
             }
             allSchemas.forEach(s -> {
                 inject(s, btValues, btVarnames, btDescriptions);
-                inject(s, atValues, atVarnames, atDescriptions);
             });
         };
     }

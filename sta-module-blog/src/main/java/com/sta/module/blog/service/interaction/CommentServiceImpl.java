@@ -71,7 +71,7 @@ public class CommentServiceImpl implements CommentService {
                 .content(content)
                 .userId(userId)
                 .toUserId(toUserId != null ? toUserId : 0L)
-                .status(0)
+                .status(1)
                 .ipLocation(ipLocation)
                 .browser(browser)
                 .os(os)

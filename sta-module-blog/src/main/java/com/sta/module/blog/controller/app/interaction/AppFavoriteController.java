@@ -29,8 +29,7 @@ public class AppFavoriteController {
     @PostMapping("/toggle")
     @Operation(summary = "切换收藏/取消收藏（无记录创建，有记录切换status）")
     public CommonResult<Boolean> toggleFavorite(@Valid @RequestBody AppFavoriteReqVO reqVO) {
-        Long id = favoriteService.createFavorite(reqVO.getType(), reqVO.getTypeId());
-        return success(id != null);
+        return success(favoriteService.toggleFavorite(reqVO.getType(), reqVO.getTypeId()));
     }
 
     @PostMapping("/cancel")

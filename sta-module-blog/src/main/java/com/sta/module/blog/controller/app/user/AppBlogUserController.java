@@ -14,7 +14,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import static cn.iocoder.yudao.framework.common.pojo.CommonResult.success;
+import static cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil.exception;
 import static cn.iocoder.yudao.framework.security.core.util.SecurityFrameworkUtils.getLoginUserId;
+import static com.sta.module.blog.enums.ErrorCodeConstants.USER_EMAIL_USED;
 
 @Tag(name = "用户 APP - 博客用户信息")
 @RestController
@@ -43,6 +45,11 @@ public class AppBlogUserController {
         if (StringUtils.hasText(reqVO.getEmail())) {
             BlogUserDO currentUser = blogUserService.getUser(userId);
             if (currentUser != null && !reqVO.getEmail().equals(currentUser.getEmail())) {
+                // 校验邮箱是否已被其他用户注册
+                BlogUserDO existingUser = blogUserService.getUserByEmail(reqVO.getEmail());
+                if (existingUser != null && !existingUser.getId().equals(userId)) {
+                    throw exception(USER_EMAIL_USED);
+                }
                 blogAuthService.verifyEmailCode(reqVO.getEmail(), "resetEmail", reqVO.getCode());
             }
         }

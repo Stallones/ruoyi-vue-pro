@@ -55,6 +55,27 @@ public class FavoriteServiceImpl implements FavoriteService {
     }
 
     @Override
+    public Boolean toggleFavorite(TypeEnum type, Long typeId) {
+        Long userId = SecurityFrameworkUtils.getLoginUserId();
+        FavoriteDO existing = favoriteMapper.selectByType(type, typeId, userId);
+        if (existing != null) {
+            // 已有记录：切换 status（1→0 或 0→1）
+            int newStatus = Objects.equals(existing.getStatus(), 1) ? 0 : 1;
+            favoriteMapper.updateById(FavoriteDO.builder().id(existing.getId()).status(newStatus).build());
+            return newStatus == 1;
+        }
+        // 无记录：创建新记录，status=1
+        FavoriteDO favorite = FavoriteDO.builder()
+                .type(type)
+                .dataId(typeId)
+                .userId(userId)
+                .status(1)
+                .build();
+        favoriteMapper.insert(favorite);
+        return true;
+    }
+
+    @Override
     public void deleteFavoriteByTypeAndTypeId(TypeEnum type, Long typeId) {
         Long userId = SecurityFrameworkUtils.getLoginUserId();
         FavoriteDO existing = favoriteMapper.selectByType(type, typeId, userId);

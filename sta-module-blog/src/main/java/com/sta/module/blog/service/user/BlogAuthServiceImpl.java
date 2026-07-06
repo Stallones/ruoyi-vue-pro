@@ -121,6 +121,13 @@ public class BlogAuthServiceImpl implements BlogAuthService {
                 throw exception(USER_EMAIL_NOT_EXISTS);
             }
         }
+        // 注册 / 修改邮箱场景：校验邮箱未被其他用户占用
+        if ("register".equals(reqVO.getScene()) || "resetEmail".equals(reqVO.getScene())) {
+            BlogUserDO existingUser = blogUserMapper.selectByEmail(reqVO.getEmail());
+            if (existingUser != null) {
+                throw exception(USER_EMAIL_USED);
+            }
+        }
         String code = RandomUtil.randomNumbers(6);
         String cacheKey = reqVO.getEmail() + ":" + reqVO.getScene();
         emailCodeCache.put(cacheKey, code);

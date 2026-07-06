@@ -22,6 +22,11 @@ public interface FavoriteService {
     Long createFavorite(TypeEnum type, Long typeId);
 
     /**
+     * App - 切换收藏/取消收藏（toggle）
+     */
+    Boolean toggleFavorite(TypeEnum type, Long typeId);
+
+    /**
      * App - 取消收藏
      */
     void deleteFavoriteByTypeAndTypeId(TypeEnum type, Long typeId);

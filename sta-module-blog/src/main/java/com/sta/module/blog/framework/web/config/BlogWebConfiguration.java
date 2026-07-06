@@ -7,6 +7,7 @@ import org.springdoc.core.customizers.OperationCustomizer;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.convert.converter.Converter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -115,6 +116,19 @@ public class BlogWebConfiguration {
         if (!values.containsAll(schema.getEnum()) || !schema.getEnum().containsAll(values)) return;
         schema.addExtension("x-enum-varnames", names);
         schema.addExtension("x-enum-descriptions", descs);
+    }
+
+    /**
+     * String → TypeEnum 转换器，让 GET 请求参数 type=10 能正确绑定到 TypeEnum
+     */
+    @Bean
+    public Converter<String, TypeEnum> stringToTypeEnumConverter() {
+        return new Converter<String, TypeEnum>() {
+            @Override
+            public TypeEnum convert(String source) {
+                return TypeEnum.of(Integer.parseInt(source));
+            }
+        };
     }
 
 }

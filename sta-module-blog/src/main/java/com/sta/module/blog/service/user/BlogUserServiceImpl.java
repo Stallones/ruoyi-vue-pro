@@ -25,6 +25,8 @@ import java.util.List;
 
 import static com.sta.module.blog.enums.ErrorCodeConstants.*;
 
+import cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil;
+
 /**
  * 博客用户 Service 实现类
  *
@@ -126,6 +128,19 @@ public class BlogUserServiceImpl implements BlogUserService {
     public void updateUserStatus(Long id, Integer status) {
         validateUserExists(id);
         blogUserMapper.updateById(BlogUserDO.builder().id(id).status(status).build());
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void changePassword(Long userId, String oldPassword, String newPassword) {
+        BlogUserDO user = validateUserExists(userId);
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw ServiceExceptionUtil.exception(USER_PASSWORD_ERROR);
+        }
+        blogUserMapper.updateById(BlogUserDO.builder()
+                .id(userId)
+                .password(encodePassword(newPassword))
+                .build());
     }
 
     // ========== 内部方法 ==========

@@ -96,10 +96,10 @@ public class BlogAuthServiceImpl implements BlogAuthService {
         String cacheKey = reqVO.getEmail() + ":register";
         String cachedCode = emailCodeCache.get(cacheKey);
         if (cachedCode == null || !cachedCode.equals(reqVO.getCode())) {
-            throw new RuntimeException("验证码错误或已过期");
+            throw exception(AUTH_CODE_INVALID_OR_EXPIRED);
         }
         if (blogUserMapper.selectByEmail(reqVO.getEmail()) != null) {
-            throw new RuntimeException("该邮箱已被注册");
+            throw exception(USER_EMAIL_USED);
         }
         BlogUserDO user = new BlogUserDO();
         user.setEmail(reqVO.getEmail());
@@ -114,6 +114,13 @@ public class BlogAuthServiceImpl implements BlogAuthService {
 
     @Override
     public void sendEmailCode(AppSendEmailCodeReqVO reqVO) {
+        // 重置密码场景：校验邮箱是否存在于系统中
+        if ("reset".equals(reqVO.getScene())) {
+            BlogUserDO user = blogUserMapper.selectByEmail(reqVO.getEmail());
+            if (user == null) {
+                throw exception(USER_EMAIL_NOT_EXISTS);
+            }
+        }
         String code = RandomUtil.randomNumbers(6);
         String cacheKey = reqVO.getEmail() + ":" + reqVO.getScene();
         emailCodeCache.put(cacheKey, code);
@@ -153,7 +160,7 @@ public class BlogAuthServiceImpl implements BlogAuthService {
         String cacheKey = reqVO.getEmail() + ":reset";
         String cachedCode = emailCodeCache.get(cacheKey);
         if (cachedCode == null || !cachedCode.equals(reqVO.getCode())) {
-            throw new RuntimeException("验证码错误或已过期");
+            throw exception(AUTH_CODE_INVALID_OR_EXPIRED);
         }
         BlogUserDO user = blogUserMapper.selectByEmail(reqVO.getEmail());
         if (user == null) {
@@ -163,6 +170,16 @@ public class BlogAuthServiceImpl implements BlogAuthService {
                 .id(user.getId())
                 .password(passwordEncoder.encode(reqVO.getPassword()))
                 .build());
+        emailCodeCache.remove(cacheKey);
+    }
+
+    @Override
+    public void verifyEmailCode(String email, String scene, String code) {
+        String cacheKey = email + ":" + scene;
+        String cachedCode = emailCodeCache.get(cacheKey);
+        if (cachedCode == null || !cachedCode.equals(code)) {
+            throw exception(AUTH_CODE_INVALID_OR_EXPIRED);
+        }
         emailCodeCache.remove(cacheKey);
     }
 

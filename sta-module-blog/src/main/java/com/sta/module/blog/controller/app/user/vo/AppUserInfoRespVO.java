@@ -3,6 +3,8 @@ package com.sta.module.blog.controller.app.user.vo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Schema(description = "用户 APP - 博客用户信息 Response VO")
 @Data
 public class AppUserInfoRespVO {
@@ -21,5 +23,8 @@ public class AppUserInfoRespVO {
 
     @Schema(description = "用户性别", example = "1")
     private Integer sex;
+
+    @Schema(description = "创建时间", example = "2024-01-01 12:00:00")
+    private LocalDateTime createTime;
 
 }

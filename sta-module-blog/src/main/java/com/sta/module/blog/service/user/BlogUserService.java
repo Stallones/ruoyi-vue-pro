@@ -83,6 +83,15 @@ public interface BlogUserService {
     boolean isPasswordMatch(String rawPassword, String encodedPassword);
 
     /**
+     * 修改密码
+     *
+     * @param userId      用户编号
+     * @param oldPassword 旧密码（明文）
+     * @param newPassword 新密码（明文）
+     */
+    void changePassword(Long userId, String oldPassword, String newPassword);
+
+    /**
      * 【管理员】获得用户分页
      *
      * @param pageReqVO 分页查询

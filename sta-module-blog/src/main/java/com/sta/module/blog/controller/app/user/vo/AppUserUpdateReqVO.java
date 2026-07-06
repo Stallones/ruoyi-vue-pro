@@ -22,6 +22,9 @@ public class AppUserUpdateReqVO {
     @Size(max = 50, message = "邮箱长度不能超过 50 个字符")
     private String email;
 
+    @Schema(description = "验证码（修改邮箱时必填）", example = "123456")
+    private String code;
+
     @Schema(description = "性别", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
     private Integer sex;
 

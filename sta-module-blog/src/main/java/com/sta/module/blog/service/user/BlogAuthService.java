@@ -25,4 +25,13 @@ public interface BlogAuthService {
 
     AppAuthLoginRespVO refreshToken(String refreshToken);
 
+    /**
+     * 校验邮箱验证码
+     *
+     * @param email 邮箱
+     * @param scene 场景（register / reset / resetEmail）
+     * @param code  验证码
+     */
+    void verifyEmailCode(String email, String scene, String code);
+
 }

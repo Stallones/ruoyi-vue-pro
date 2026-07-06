@@ -48,10 +48,12 @@ public interface ErrorCodeConstants {
     ErrorCode AUTH_LOGIN_BAD_CREDENTIALS = new ErrorCode(1_031_200_000, "账号或密码不正确");
     ErrorCode AUTH_LOGIN_USER_DISABLED = new ErrorCode(1_031_200_001, "该账号已被禁用");
     ErrorCode AUTH_SOCIAL_USER_NOT_FOUND = new ErrorCode(1_031_200_002, "社交用户信息不存在");
+    ErrorCode AUTH_CODE_INVALID_OR_EXPIRED = new ErrorCode(1_031_200_003, "验证码错误或已过期");
 
     // ========== 用户（1-031-201-000） ==========
     ErrorCode USER_NOT_EXISTS = new ErrorCode(1_031_201_000, "用户不存在");
     ErrorCode USER_EMAIL_NOT_EXISTS = new ErrorCode(1_031_201_001, "该邮箱对应的用户不存在");
     ErrorCode USER_EMAIL_USED = new ErrorCode(1_031_201_002, "该邮箱已被其他用户使用");
+    ErrorCode USER_PASSWORD_ERROR = new ErrorCode(1_031_201_003, "旧密码不正确");
 
 }

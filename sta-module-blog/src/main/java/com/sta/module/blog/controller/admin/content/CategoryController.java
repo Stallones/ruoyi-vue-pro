@@ -6,6 +6,8 @@ import com.sta.module.blog.controller.admin.content.vo.CategoryRespVO;
 import com.sta.module.blog.controller.admin.content.vo.CategorySaveReqVO;
 import com.sta.module.blog.dal.dataobject.content.CategoryDO;
 import com.sta.module.blog.service.content.CategoryService;
+import java.util.List;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -57,6 +59,14 @@ public class CategoryController {
     public CommonResult<CategoryRespVO> getCategory(@RequestParam("id") Long id) {
         CategoryDO category = categoryService.getCategory(id);
         return success(BeanUtils.toBean(category, CategoryRespVO.class));
+    }
+
+    @GetMapping("/list")
+    @Operation(summary = "获得分类列表")
+    @PreAuthorize("@ss.hasPermission('blog:category:query')")
+    public CommonResult<List<CategoryRespVO>> getCategoryList() {
+        List<CategoryDO> list = categoryService.getCategoryList();
+        return success(BeanUtils.toBean(list, CategoryRespVO.class));
     }
 
 }

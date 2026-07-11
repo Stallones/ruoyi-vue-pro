@@ -5,6 +5,7 @@ import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
 import com.sta.module.blog.controller.admin.media.vo.ImageRespVO;
 import com.sta.module.blog.controller.admin.media.vo.ImageSaveReqVO;
 import com.sta.module.blog.dal.dataobject.media.ImageDO;
+import com.sta.module.blog.enums.TypeEnum;
 import com.sta.module.blog.service.media.ImageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -67,6 +68,17 @@ public class ImageController {
     public CommonResult<Boolean> updateSort(@RequestBody List<ImageSaveReqVO> sortList) {
         imageService.updateSort(sortList);
         return success(true);
+    }
+
+    @GetMapping("/list")
+    @Operation(summary = "获得图片列表（按类型过滤）")
+    @Parameter(name = "type", description = "图片类型（51封面图 52轮播图 53banner图）")
+    @PreAuthorize("@ss.hasPermission('blog:image:query')")
+    public CommonResult<List<ImageRespVO>> getImageList(
+            @RequestParam(value = "type", required = false) Integer type) {
+        List<ImageDO> list = imageService.getImageListByType(
+                type != null ? TypeEnum.of(type) : null, null);
+        return success(BeanUtils.toBean(list, ImageRespVO.class));
     }
 
 }

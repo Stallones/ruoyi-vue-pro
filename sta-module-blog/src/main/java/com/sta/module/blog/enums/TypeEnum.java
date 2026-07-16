@@ -27,6 +27,7 @@ public enum TypeEnum implements ArrayValuable<Integer> {
     IMG_COVER(51, "封面图", "imgCover"),
     IMG_HOME(52, "轮播图", "imgHome"),
     IMG_PAGE(53, "banner图", "imgPage"),
+    IMG_AVATAR(54, "头像", "imgAvatar"),
     ;
 
     public static final Integer[] ARRAYS = Arrays.stream(values()).map(TypeEnum::getValue).toArray(Integer[]::new);

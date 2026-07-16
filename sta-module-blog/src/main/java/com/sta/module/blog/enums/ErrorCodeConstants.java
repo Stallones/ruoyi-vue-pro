@@ -37,6 +37,9 @@ public interface ErrorCodeConstants {
 
     // ========== 图片管理（1-031-109-000） ==========
     ErrorCode IMAGE_NOT_EXISTS = new ErrorCode(1_031_109_000, "图片不存在");
+    ErrorCode IMAGE_FILE_TYPE_INVALID = new ErrorCode(1_031_109_001, "图片类型不正确，仅支持 jpg/png");
+    ErrorCode IMAGE_FILE_SIZE_EXCEEDED = new ErrorCode(1_031_109_002, "图片大小不能超过 2MB");
+    ErrorCode IMAGE_TYPE_INVALID = new ErrorCode(1_031_109_003, "图片类型不正确");
 
     // ========== 网站信息管理（1-031-110-000） ==========
     ErrorCode WEBSITE_INFO_NOT_EXISTS = new ErrorCode(1_031_110_000, "网站信息不存在");

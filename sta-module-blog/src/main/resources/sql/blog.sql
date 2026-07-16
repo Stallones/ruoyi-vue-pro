@@ -188,7 +188,7 @@ CREATE TABLE `blog_like` (
 DROP TABLE IF EXISTS `blog_image`;
 CREATE TABLE `blog_image` (
     `id` bigint NOT NULL AUTO_INCREMENT COMMENT '图ID',
-    `type` tinyint NOT NULL COMMENT '图类型(51封面 52首页轮播图 53路由页头)',
+    `type` tinyint NOT NULL COMMENT '图类型(51封面 52首页轮播图 53路由页头 54头像)',
     `data_id` bigint NOT NULL COMMENT '目标ID（按 type 关联：cover→文章ID, home→首页轮播图ID, banner→路由页头ID）',
     `path` varchar(512) NOT NULL COMMENT '图片路径',
     `size` bigint DEFAULT 0 COMMENT '图片大小（字节）',

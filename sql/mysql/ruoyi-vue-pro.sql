@@ -5107,4 +5107,16 @@ INSERT INTO `yudao_demo03_student` (`id`, `name`, `sex`, `birthday`, `descriptio
 INSERT INTO `yudao_demo03_student` (`id`, `name`, `sex`, `birthday`, `description`, `creator`, `create_time`, `updater`, `update_time`, `deleted`, `tenant_id`) VALUES (9, '小花', 1, '2023-11-07 00:00:00', '<p>哈哈哈</p>', '1', '2023-11-17 00:04:47', '1', '2025-04-19 10:49:04', b'0', 1);
 COMMIT;
 
+-- ----------------------------
+-- Blog Image Upload Refactor: mark MinIO config for blog and update blog_image comment
+-- ----------------------------
+-- 标记 id=28 为博客专用 MinIO 配置，但不修改 master 标志，保证系统默认上传仍走 id=22
+UPDATE `infra_file_config`
+SET `name` = 'MinIO 存储（博客）',
+    `remark` = '博客专用 MinIO 存储，路径前缀为 blog/，master 保持为 0 不影响系统默认上传'
+WHERE `id` = 28;
+
+-- 更新 blog_image 类型注释，加入头像类型
+ALTER TABLE `blog_image` MODIFY COLUMN `type` tinyint NOT NULL COMMENT '图类型(51封面 52首页轮播图 53路由页头 54头像)';
+
 SET FOREIGN_KEY_CHECKS = 1;

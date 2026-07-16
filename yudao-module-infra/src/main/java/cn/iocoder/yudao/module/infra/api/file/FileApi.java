@@ -1,6 +1,7 @@
 package cn.iocoder.yudao.module.infra.api.file;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * 文件 API 接口
@@ -40,6 +41,20 @@ public interface FileApi {
      * @return 文件路径
      */
     String createFile(@NotEmpty(message = "文件内容不能为空") byte[] content,
+                      String name, String directory, String type);
+
+    /**
+     * 保存文件到指定存储配置，并返回文件的访问路径
+     *
+     * @param configId  文件存储配置编号
+     * @param content   文件内容
+     * @param name      文件名称，允许空
+     * @param directory 目录，允许空
+     * @param type      文件的 MIME 类型，允许空
+     * @return 文件路径
+     */
+    String createFile(@NotNull(message = "文件存储配置编号不能为空") Long configId,
+                      @NotEmpty(message = "文件内容不能为空") byte[] content,
                       String name, String directory, String type);
 
     /**

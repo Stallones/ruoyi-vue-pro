@@ -28,4 +28,7 @@ public class AppSnapshotRespVO {
     @Schema(description = "图片列表")
     private List<AppImageRespVO> images;
 
+    @Schema(description = "友链列表（已审核）")
+    private List<AppLinkRespVO> links;
+
 }

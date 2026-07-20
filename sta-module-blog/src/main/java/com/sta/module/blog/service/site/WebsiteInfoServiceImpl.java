@@ -9,6 +9,7 @@ import com.sta.module.blog.controller.app.content.vo.AppTagRespVO;
 import com.sta.module.blog.controller.app.media.vo.AppImageRespVO;
 import com.sta.module.blog.controller.app.site.vo.AppSnapshotRespVO;
 import com.sta.module.blog.controller.app.site.vo.AppWebsiteInfoRespVO;
+import com.sta.module.blog.controller.app.site.vo.AppLinkRespVO;
 import com.sta.module.blog.dal.dataobject.content.ArticleDO;
 import com.sta.module.blog.dal.dataobject.content.ArticleTagDO;
 import com.sta.module.blog.dal.dataobject.content.CategoryDO;
@@ -70,6 +71,8 @@ public class WebsiteInfoServiceImpl implements WebsiteInfoService {
     private TagService tagService;
     @Resource
     private ImageService imageService;
+    @Resource
+    private LinkService linkService;
 
     @Override
     public AppWebsiteInfoRespVO getStats() {
@@ -116,6 +119,9 @@ public class WebsiteInfoServiceImpl implements WebsiteInfoService {
         // 5. 图片列表（全量）
         List<ImageDO> images = imageService.getImageList();
         snapshot.setImages(BeanUtils.toBean(images, AppImageRespVO.class));
+
+        // 6. 友链列表（已审核）
+        snapshot.setLinks(BeanUtils.toBean(linkService.getLinkList(), AppLinkRespVO.class));
 
         return snapshot;
     }

@@ -203,29 +203,6 @@ CREATE TABLE `blog_image` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='博客图片表';
 
--- ========== 11. 网站信息表 ==========
-DROP TABLE IF EXISTS `blog_website_info`;
-CREATE TABLE `blog_website_info` (
-    `id` bigint NOT NULL AUTO_INCREMENT COMMENT '网站信息ID',
-    `webmaster_avatar` varchar(512) DEFAULT '' COMMENT '站长头像',
-    `webmaster_name` varchar(128) DEFAULT '' COMMENT '站长名称',
-    `webmaster_copy` varchar(512) DEFAULT '' COMMENT '站长文案',
-    `webmaster_profile_background` varchar(512) DEFAULT '' COMMENT '站长资料卡背景图',
-    `gitee_link` varchar(256) DEFAULT '' COMMENT 'Gitee链接',
-    `github_link` varchar(256) DEFAULT '' COMMENT 'GitHub链接',
-    `website_name` varchar(128) DEFAULT '' COMMENT '网站名称',
-    `header_notification` varchar(1024) DEFAULT '' COMMENT '头部通知',
-    `sidebar_announcement` varchar(1024) DEFAULT '' COMMENT '侧面公告',
-    `record_info` varchar(256) DEFAULT '' COMMENT '备案信息',
-    `start_time` datetime DEFAULT NULL COMMENT '开始运行时间',
-
-    `creator` varchar(64) DEFAULT '' COMMENT '创建者',
-    `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updater` varchar(64) DEFAULT '' COMMENT '更新者',
-    `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='博客网站信息表';
 
 
 DROP TABLE IF EXISTS `blog_user`;

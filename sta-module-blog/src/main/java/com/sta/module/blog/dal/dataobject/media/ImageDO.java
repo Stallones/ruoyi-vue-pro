@@ -23,7 +23,7 @@ public class ImageDO extends BaseDO {
     @TableId
     private Long id;
     /**
-     * 图类型（51封面图 52轮播图 53 banner图）
+     * 图类型（51封面图 52轮播图 53 banner图 54头像）
      */
     private TypeEnum type;
     /**

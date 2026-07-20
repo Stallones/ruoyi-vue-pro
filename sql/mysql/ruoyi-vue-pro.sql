@@ -5113,7 +5113,8 @@ COMMIT;
 -- 标记 id=28 为博客专用 MinIO 配置，但不修改 master 标志，保证系统默认上传仍走 id=22
 UPDATE `infra_file_config`
 SET `name` = 'MinIO 存储（博客）',
-    `remark` = '博客专用 MinIO 存储，路径前缀为 blog/，master 保持为 0 不影响系统默认上传'
+    `remark` = '博客专用 MinIO 存储，路径前缀为 blog/，master 保持为 0 不影响系统默认上传',
+    `config` = '{"@class":"cn.iocoder.yudao.module.infra.framework.file.core.client.s3.S3FileClientConfig","endpoint":"http://192.168.20.128:19000","domain":"http://192.168.20.128:19000/yudao","bucket":"yudao","accessKey":"admin","accessSecret":"password","enablePathStyleAccess":true,"enablePublicAccess":true}'
 WHERE `id` = 28;
 
 -- 更新 blog_image 类型注释，加入头像类型

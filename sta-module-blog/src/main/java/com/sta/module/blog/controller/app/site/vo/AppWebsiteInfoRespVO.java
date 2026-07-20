@@ -5,50 +5,35 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Schema(description = "用户 APP - 博客网站信息 Response VO")
+@Schema(description = "用户 APP - 博客网站统计 Response VO")
 @Data
 public class AppWebsiteInfoRespVO {
 
-    @Schema(description = "网站信息编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
-    private Long id;
+    @Schema(description = "文章数量")
+    private Long articleCount;
 
-    @Schema(description = "站长头像")
-    private String webmasterAvatar;
+    @Schema(description = "评论数量")
+    private Long commentCount;
 
-    @Schema(description = "站长名称")
-    private String webmasterName;
+    @Schema(description = "留言数量")
+    private Long messageCount;
 
-    @Schema(description = "站长文案")
-    private String webmasterCopy;
+    @Schema(description = "点赞数量（全站）")
+    private Long likeCount;
 
-    @Schema(description = "站长资料卡背景图")
-    private String webmasterProfileBackground;
+    @Schema(description = "收藏数量（全站）")
+    private Long favoriteCount;
 
-    @Schema(description = "Gitee链接")
-    private String giteeLink;
+    @Schema(description = "分类数量")
+    private Long categoryCount;
 
-    @Schema(description = "GitHub链接")
-    private String githubLink;
+    @Schema(description = "标签数量")
+    private Long tagCount;
 
-    @Schema(description = "网站名称")
-    private String websiteName;
+    @Schema(description = "总访问量")
+    private Long visitCount;
 
-    @Schema(description = "头部通知")
-    private String headerNotification;
-
-    @Schema(description = "侧面公告")
-    private String sidebarAnnouncement;
-
-    @Schema(description = "备案信息")
-    private String recordInfo;
-
-    @Schema(description = "开始运行时间")
-    private LocalDateTime startTime;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "更新时间")
-    private LocalDateTime updateTime;
+    @Schema(description = "最后更新时间")
+    private LocalDateTime lastUpdateTime;
 
 }

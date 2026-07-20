@@ -13,7 +13,7 @@ public class ImageRespVO {
     @Schema(description = "图片编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
     private Long id;
 
-    @Schema(description = "图类型（51封面图 52轮播图 53banner图）", example = "51")
+    @Schema(description = "图类型（51封面图 52轮播图 53banner图 54头像）", example = "51")
     private TypeEnum type;
 
     @Schema(description = "目标ID", example = "1")

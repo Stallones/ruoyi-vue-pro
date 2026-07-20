@@ -7,11 +7,21 @@ import com.sta.module.blog.controller.admin.content.vo.ArticlePageReqVO;
 import com.sta.module.blog.controller.app.content.vo.AppArticlePageReqVO;
 import com.sta.module.blog.dal.dataobject.content.ArticleDO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Mapper
 public interface ArticleMapper extends BaseMapperX<ArticleDO> {
+
+    /** 统计公开文章总访问量 */
+    @Select("SELECT COALESCE(SUM(visit_count), 0) FROM blog_article WHERE status = 1 AND deleted = 0")
+    Long selectSumVisitCount();
+
+    /** 查询公开文章最新更新时间 */
+    @Select("SELECT MAX(update_time) FROM blog_article WHERE status = 1 AND deleted = 0")
+    LocalDateTime selectMaxUpdateTime();
 
     default PageResult<ArticleDO> selectPage(ArticlePageReqVO reqVO) {
         return selectPage(reqVO, new LambdaQueryWrapperX<ArticleDO>()

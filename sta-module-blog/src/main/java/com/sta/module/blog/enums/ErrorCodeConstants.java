@@ -41,9 +41,6 @@ public interface ErrorCodeConstants {
     ErrorCode IMAGE_FILE_SIZE_EXCEEDED = new ErrorCode(1_031_109_002, "图片大小不能超过 2MB");
     ErrorCode IMAGE_TYPE_INVALID = new ErrorCode(1_031_109_003, "图片类型不正确");
 
-    // ========== 网站信息管理（1-031-110-000） ==========
-    ErrorCode WEBSITE_INFO_NOT_EXISTS = new ErrorCode(1_031_110_000, "网站信息不存在");
-
     // ========== 黑名单管理（1-031-111-000） ==========
     ErrorCode BLACK_LIST_NOT_EXISTS = new ErrorCode(1_031_111_000, "黑名单记录不存在");
 

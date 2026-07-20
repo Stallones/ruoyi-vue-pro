@@ -13,7 +13,7 @@ public class ImageSaveReqVO {
     @Schema(description = "编号", example = "1")
     private Long id;
 
-    @Schema(description = "图类型（51封面图 52轮播图 53banner图）", requiredMode = Schema.RequiredMode.REQUIRED, example = "51")
+    @Schema(description = "图类型（51封面图 52轮播图 53banner图 54头像）", requiredMode = Schema.RequiredMode.REQUIRED, example = "51")
     @NotNull(message = "图类型不能为空")
     private TypeEnum type;
 

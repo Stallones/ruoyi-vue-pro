@@ -72,7 +72,7 @@ public class ImageController {
 
     @GetMapping("/list")
     @Operation(summary = "获得图片列表（按类型过滤）")
-    @Parameter(name = "type", description = "图片类型（51封面图 52轮播图 53banner图）")
+    @Parameter(name = "type", description = "图片类型（51封面图 52轮播图 53banner图 54头像）")
     @PreAuthorize("@ss.hasPermission('blog:image:query')")
     public CommonResult<List<ImageRespVO>> getImageList(
             @RequestParam(value = "type", required = false) Integer type) {

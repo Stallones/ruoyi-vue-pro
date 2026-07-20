@@ -104,5 +104,13 @@ public interface CommentMapper extends BaseMapperX<CommentDO> {
                 .eq(CommentDO::getStatus, 1));
     }
 
+    /**
+     * 统计全站已审核评论总数
+     */
+    default Long selectTotalApprovedCount() {
+        return selectCount(new LambdaQueryWrapperX<CommentDO>()
+                .eq(CommentDO::getStatus, 1));
+    }
+
 }
 

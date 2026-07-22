@@ -12,6 +12,7 @@ import com.sta.module.blog.controller.admin.user.vo.UserPageReqVO;
 import com.sta.module.blog.controller.app.user.vo.AppUserUpdateReqVO;
 import com.sta.module.blog.dal.dataobject.user.BlogUserDO;
 import com.sta.module.blog.dal.mysql.user.BlogUserMapper;
+import com.sta.module.blog.service.media.ImageService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -42,6 +43,9 @@ public class BlogUserServiceImpl implements BlogUserService {
 
     @Resource
     private PasswordEncoder passwordEncoder;
+
+    @Resource
+    private ImageService imageService;
 
     @Override
     public BlogUserDO getUserByEmail(String email) {
@@ -97,12 +101,16 @@ public class BlogUserServiceImpl implements BlogUserService {
     @Transactional(rollbackFor = Exception.class)
     public void updateUser(Long userId, AppUserUpdateReqVO reqVO) {
         // 校验用户存在
-        validateUserExists(userId);
+        BlogUserDO user = validateUserExists(userId);
         // 校验邮箱唯一
         validateEmailUnique(userId, reqVO.getEmail());
         // 更新用户
         BlogUserDO updateObj = BeanUtils.toBean(reqVO, BlogUserDO.class).setId(userId);
         blogUserMapper.updateById(updateObj);
+        // 头像变化时，在 blog_image 记录
+        if (!StrUtil.equals(user.getAvatar(), reqVO.getAvatar()) && StrUtil.isNotBlank(reqVO.getAvatar())) {
+            imageService.recordAvatarImage(userId, reqVO.getAvatar(), 0L);
+        }
     }
 
     @Override

@@ -336,10 +336,10 @@ INSERT INTO `system_menu` VALUES (3099, '图片删除', 'blog:image:delete', 3, 
 
 -- ========== 二级目录：站点 ==========
 INSERT INTO `system_menu` VALUES (3105, '站点', '', 1, 4, 3000, 'site', 'ep:monitor', NULL, NULL, 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
--- 网站信息
-INSERT INTO `system_menu` VALUES (3110, '网站信息', '', 2, 1, 3105, 'web-info', 'ep:monitor', 'blog/site/website-info/index', 'BlogWebsiteInfo', 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
-INSERT INTO `system_menu` VALUES (3111, '网站信息查询', 'blog:website-info:query', 3, 1, 3110, '', '', '', NULL, 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
-INSERT INTO `system_menu` VALUES (3112, '网站信息修改', 'blog:website-info:update', 3, 2, 3110, '', '', '', NULL, 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
+-- 网站信息（前端页面尚未实现，暂时注释菜单，避免 vben-admin 路由报错）
+-- INSERT INTO `system_menu` VALUES (3110, '网站信息', '', 2, 1, 3105, 'web-info', 'ep:monitor', 'blog/site/website-info/index', 'BlogWebsiteInfo', 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
+-- INSERT INTO `system_menu` VALUES (3111, '网站信息查询', 'blog:website-info:query', 3, 1, 3110, '', '', '', NULL, 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
+-- INSERT INTO `system_menu` VALUES (3112, '网站信息修改', 'blog:website-info:update', 3, 2, 3110, '', '', '', NULL, 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');
 
 -- ========== 二级目录：用户 ==========
 INSERT INTO `system_menu` VALUES (3135, '用户', '', 1, 5, 3000, 'user', 'ep:user-filled', NULL, NULL, 0, b'1', b'1', b'1', 'admin', NOW(), 'admin', NOW(), b'0');

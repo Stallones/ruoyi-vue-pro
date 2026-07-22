@@ -71,20 +71,6 @@ public class FileServiceImpl implements FileService {
     @Override
     @SneakyThrows
     public String createFile(byte[] content, String name, String directory, String type) {
-        FileClient client = fileConfigService.getMasterFileClient();
-        Assert.notNull(client, "客户端(master) 不能为空");
-        return createFile0(client, content, name, directory, type);
-    }
-
-    @Override
-    @SneakyThrows
-    public String createFile(Long configId, byte[] content, String name, String directory, String type) {
-        FileClient client = fileConfigService.getFileClient(configId);
-        Assert.notNull(client, "客户端({}) 不能为空", configId);
-        return createFile0(client, content, name, directory, type);
-    }
-
-    private String createFile0(FileClient client, byte[] content, String name, String directory, String type) throws Exception {
         // 1.1 处理 name 的合法性，禁止携带目录路径
         name = FilePathUtils.validateFileName(name);
 
@@ -107,7 +93,10 @@ public class FileServiceImpl implements FileService {
         // 2.1 生成上传的 path，需要保证唯一
         String path = generateUploadPath(name, directory);
         // 2.2 上传到文件存储器
+        FileClient client = fileConfigService.getMasterFileClient();
+        Assert.notNull(client, "客户端(master) 不能为空");
         String url = client.upload(content, path, type);
+
 
         // 3. 保存到数据库
         fileMapper.insert(new FileDO().setConfigId(client.getId())

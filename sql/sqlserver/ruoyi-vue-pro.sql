@@ -3367,6 +3367,10 @@ INSERT INTO system_dict_data (id, sort, label, value, dict_type, status, color_t
 GO
 INSERT INTO system_dict_data (id, sort, label, value, dict_type, status, color_type, css_class, remark, creator, create_time, updater, update_time, deleted) VALUES (3036, 60, N'Admin Uniapp 移动端', N'60', N'infra_codegen_front_type', 0, N'', N'', NULL, N'1', N'2025-12-16 19:25:51', N'1', N'2025-12-17 09:46:15', N'0')
 GO
+INSERT INTO system_dict_data (id, sort, label, value, dict_type, status, color_type, css_class, remark, creator, create_time, updater, update_time, deleted) VALUES (3037, 42, N'Vben5.0 Antdv Next Schema 模版', N'42', N'infra_codegen_front_type', 0, N'', N'', N'', N'1', N'2026-05-16 00:00:00', N'1', N'2026-05-16 00:00:00', N'0')
+GO
+INSERT INTO system_dict_data (id, sort, label, value, dict_type, status, color_type, css_class, remark, creator, create_time, updater, update_time, deleted) VALUES (3038, 43, N'Vben5.0 Antdv Next 标准模版', N'43', N'infra_codegen_front_type', 0, N'', N'', N'', N'1', N'2026-05-16 00:00:00', N'1', N'2026-05-16 00:00:00', N'0')
+GO
 INSERT INTO system_dict_data (id, sort, label, value, dict_type, status, color_type, css_class, remark, creator, create_time, updater, update_time, deleted) VALUES (3040, 1, N'UDP', N'udp', N'iot_protocol_type', 0, N'', N'', N'UDP 协议', N'1', N'2026-02-04 00:32:47', N'1', N'2026-02-04 00:32:47', N'0')
 GO
 INSERT INTO system_dict_data (id, sort, label, value, dict_type, status, color_type, css_class, remark, creator, create_time, updater, update_time, deleted) VALUES (3041, 2, N'WebSocket', N'websocket', N'iot_protocol_type', 0, N'', N'', N'WebSocket 协议', N'1', N'2026-02-04 00:32:55', N'1', N'2026-02-04 00:32:55', N'0')
@@ -9662,8 +9666,11 @@ INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, update
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (492, 2, 109, N'1', N'2022-02-22 13:09:12', N'1', N'2022-02-22 13:09:12', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (498, 2, 1138, N'1', N'2022-02-22 13:09:12', N'1', N'2022-02-22 13:09:12', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (523, 2, 1224, N'1', N'2022-02-22 13:09:12', N'1', N'2022-02-22 13:09:12', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (524, 2, 1225, N'1', N'2022-02-22 13:09:12', N'1', N'2022-02-22 13:09:12', N'0', 1)
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (541, 2, 500, N'1', N'2022-02-22 13:09:12', N'1', N'2022-02-22 13:09:12', N'0', 1)
 GO
@@ -10081,14 +10088,19 @@ INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, update
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2072, 2, 114, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2073, 2, 1139, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2074, 2, 115, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2075, 2, 1140, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2076, 2, 116, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2077, 2, 1141, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2078, 2, 1142, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2079, 2, 1143, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2080, 2, 1150, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
@@ -10104,9 +10116,13 @@ INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, update
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2092, 2, 1178, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2099, 2, 1226, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2100, 2, 1227, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2101, 2, 1228, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2102, 2, 1229, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2103, 2, 1237, N'1', N'2023-01-25 08:42:52', N'1', N'2023-01-25 08:42:52', N'0', 1)
 GO
@@ -10244,29 +10260,53 @@ INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, update
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2184, 2, 2018, N'1', N'2023-01-25 08:43:12', N'1', N'2023-01-25 08:43:12', N'0', 1)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2929, 109, 1224, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2930, 109, 1225, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2931, 109, 1226, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2932, 109, 1227, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2933, 109, 1228, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2934, 109, 1229, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2935, 109, 1138, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2936, 109, 1139, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2937, 109, 1140, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2938, 109, 1141, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2939, 109, 1142, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2940, 109, 1143, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 121)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2941, 111, 1224, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2942, 111, 1225, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2943, 111, 1226, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2944, 111, 1227, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2945, 111, 1228, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2946, 111, 1229, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2947, 111, 1138, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2948, 111, 1139, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2949, 111, 1140, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2950, 111, 1141, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2951, 111, 1142, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
+INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2952, 111, 1143, N'1', N'2023-12-02 23:19:40', N'1', N'2023-12-02 23:19:40', N'0', 122)
 GO
 INSERT INTO system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2993, 109, 2, N'1', N'2023-12-02 23:41:02', N'1', N'2023-12-02 23:41:02', N'0', 121)
 GO
@@ -12483,4 +12523,1399 @@ EXEC sp_addextendedproperty
     'SCHEMA', N'dbo',
     'TABLE', N'system_social_user_bind'
 GO
-
+
+-- ----------------------------
+-- Table structure for system_tenant
+-- ----------------------------
+DROP TABLE IF EXISTS system_tenant
+GO
+CREATE TABLE system_tenant (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    name nvarchar(30)  NOT NULL,
+    contact_user_id bigint DEFAULT NULL NULL,
+    contact_name nvarchar(30)  NOT NULL,
+    contact_mobile nvarchar(500) DEFAULT NULL NULL,
+    status tinyint DEFAULT 0 NOT NULL,
+    websites nvarchar(1024) DEFAULT '' NULL,
+    package_id bigint  NOT NULL,
+    expire_time datetime2  NOT NULL,
+    account_count int  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NOT NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户名',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'联系人的用户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'contact_user_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'联系人',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'contact_name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'联系手机',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'contact_mobile'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户状态',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'status'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'绑定域名数组',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'websites'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户套餐编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'package_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'过期时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'expire_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'账号数量',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'account_count'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant'
+GO
+
+-- ----------------------------
+-- Records of system_tenant
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT system_tenant ON
+GO
+INSERT INTO system_tenant (id, name, contact_user_id, contact_name, contact_mobile, status, websites, package_id, expire_time, account_count, creator, create_time, updater, update_time, deleted) VALUES (1, N'芋道源码', NULL, N'芋艿', N'17321315478', 0, N'www.iocoder.cn,127.0.0.1:3000,wxc4598c446f8a9cb3', 0, N'2099-02-19 17:14:16', 9999, N'1', N'2021-01-05 17:03:47', N'1', N'2025-08-19 05:18:41', N'0')
+GO
+INSERT INTO system_tenant (id, name, contact_user_id, contact_name, contact_mobile, status, websites, package_id, expire_time, account_count, creator, create_time, updater, update_time, deleted) VALUES (121, N'小租户', 110, N'小王2', N'15601691300', 0, N'zsxq.iocoder.cn,123321', 111, N'2026-07-10 00:00:00', 30, N'1', N'2022-02-22 00:56:14', N'1', N'2025-08-19 21:19:29', N'0')
+GO
+INSERT INTO system_tenant (id, name, contact_user_id, contact_name, contact_mobile, status, websites, package_id, expire_time, account_count, creator, create_time, updater, update_time, deleted) VALUES (122, N'测试租户', 113, N'芋道', N'15601691300', 0, N'test.iocoder.cn,222,333', 111, N'2023-04-29 00:00:00', 50, N'1', N'2022-03-07 21:37:58', N'1', N'2025-12-21 09:50:00', N'0')
+GO
+SET IDENTITY_INSERT system_tenant OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for system_tenant_package
+-- ----------------------------
+DROP TABLE IF EXISTS system_tenant_package
+GO
+CREATE TABLE system_tenant_package (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    name nvarchar(30)  NOT NULL,
+    status tinyint DEFAULT 0 NOT NULL,
+    remark nvarchar(256) DEFAULT '' NULL,
+    menu_ids nvarchar(4000)  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NOT NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'套餐编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'套餐名',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户状态（0正常 1停用）',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'status'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'备注',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'remark'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'关联的菜单编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'menu_ids'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户套餐表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_tenant_package'
+GO
+
+-- ----------------------------
+-- Records of system_tenant_package
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT system_tenant_package ON
+GO
+INSERT INTO system_tenant_package (id, name, status, remark, menu_ids, creator, create_time, updater, update_time, deleted) VALUES (111, N'普通套餐', 0, N'小功能', N'[1,2,5,1031,1032,1033,1034,1035,1036,1037,1038,1039,1050,1051,1052,1053,1054,1056,1057,1058,1059,1060,1063,1064,1065,1066,1067,1070,1075,1077,1078,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,1117,1118,1119,1120,100,101,102,1126,103,1127,1128,1129,106,1130,107,1132,1133,110,1134,111,1135,112,1136,113,1137,2161,114,1138,1139,115,1140,116,1141,1142,1143,1150,1161,1162,1166,1173,1174,2713,2714,1178,2715,2716,2717,2718,2720,2721,1185,2722,1186,1187,2723,1188,2724,1189,2725,1190,2726,1191,2727,1192,2728,2729,1193,1194,2730,1195,2731,2732,1197,2733,1198,2734,1199,2735,1200,1201,1202,2739,2740,1207,1208,1209,2745,1210,2746,1211,2747,1212,2748,1213,1215,1216,1217,1218,1219,1220,2756,1221,2757,1222,1224,1225,1226,1227,1228,1229,1237,1238,2262,1239,1240,1241,1242,1243,2275,2276,2277,1255,1256,1257,2281,1258,2282,1259,2283,1260,2284,2285,2287,2288,2293,2294,2297,2300,2301,2302,2317,2318,2319,2320,2321,2322,2323,2324,2325,2326,2327,2328,2329,2330,2331,2332,2333,2334,2335,2363,2364,5011,5012,2472,2478,2479,2480,2481,2482,2483,2484,2485,2486,2487,2488,2489,2490,2491,2492,2493,2494,2495,2497,2525,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,2549,1014,2550,1015,2551,1016,2552,1017,2553,1018,2554,1019,2555,1020,2556,2557,2558,2559]', N'1', N'2022-02-22 00:54:00', N'1', N'2025-09-06 20:52:25', N'0')
+GO
+SET IDENTITY_INSERT system_tenant_package OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for system_user_post
+-- ----------------------------
+DROP TABLE IF EXISTS system_user_post
+GO
+CREATE TABLE system_user_post (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    user_id bigint DEFAULT 0 NOT NULL,
+    post_id bigint DEFAULT 0 NOT NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'id',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户ID',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'user_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'岗位ID',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'post_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户岗位表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_post'
+GO
+
+-- ----------------------------
+-- Records of system_user_post
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT system_user_post ON
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (112, 1, 1, N'admin', N'2022-05-02 07:25:24', N'admin', N'2022-05-02 07:25:24', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (113, 100, 1, N'admin', N'2022-05-02 07:25:24', N'admin', N'2022-05-02 07:25:24', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (115, 104, 1, N'1', N'2022-05-16 19:36:28', N'1', N'2022-05-16 19:36:28', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (116, 117, 2, N'1', N'2022-07-09 17:40:26', N'1', N'2022-07-09 17:40:26', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (117, 118, 1, N'1', N'2022-07-09 17:44:44', N'1', N'2022-07-09 17:44:44', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (119, 114, 5, N'1', N'2024-03-24 20:45:51', N'1', N'2024-03-24 20:45:51', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (123, 115, 1, N'1', N'2024-04-04 09:37:14', N'1', N'2024-04-04 09:37:14', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (124, 115, 2, N'1', N'2024-04-04 09:37:14', N'1', N'2024-04-04 09:37:14', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (125, 1, 2, N'1', N'2024-07-13 22:31:39', N'1', N'2024-07-13 22:31:39', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (128, 139, 2, N'1', N'2025-12-05 21:43:27', N'1', N'2025-12-05 21:43:27', N'0', 1)
+GO
+INSERT INTO system_user_post (id, user_id, post_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (129, 139, 4, N'1', N'2025-12-05 21:43:27', N'1', N'2025-12-05 21:43:27', N'0', 1)
+GO
+SET IDENTITY_INSERT system_user_post OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for system_user_role
+-- ----------------------------
+DROP TABLE IF EXISTS system_user_role
+GO
+CREATE TABLE system_user_role (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    user_id bigint  NOT NULL,
+    role_id bigint  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+CREATE INDEX idx_system_user_role_01 ON system_user_role (user_id)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'自增编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户ID',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'user_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'角色ID',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'role_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户和角色关联表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_user_role'
+GO
+
+-- ----------------------------
+-- Records of system_user_role
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT system_user_role ON
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (1, 1, 1, N'', N'2022-01-11 13:19:45', N'', N'2022-05-12 12:35:17', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2, 2, 2, N'', N'2022-01-11 13:19:45', N'', N'2022-05-12 12:35:13', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (5, 100, 1, N'', N'2022-01-11 13:19:45', N'', N'2022-05-12 12:35:12', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (6, 100, 2, N'', N'2022-01-11 13:19:45', N'', N'2022-05-12 12:35:11', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (10, 103, 1, N'1', N'2022-01-11 13:19:45', N'1', N'2022-01-11 13:19:45', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (14, 110, 109, N'1', N'2022-02-22 00:56:14', N'1', N'2022-02-22 00:56:14', N'0', 121)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (15, 111, 110, N'110', N'2022-02-23 13:14:38', N'110', N'2022-02-23 13:14:38', N'0', 121)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (16, 113, 111, N'1', N'2022-03-07 21:37:58', N'1', N'2022-03-07 21:37:58', N'0', 122)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (18, 1, 2, N'1', N'2022-05-12 20:39:29', N'1', N'2022-05-12 20:39:29', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (22, 115, 2, N'1', N'2022-07-21 22:08:30', N'1', N'2022-07-21 22:08:30', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (35, 112, 1, N'1', N'2024-03-15 20:00:24', N'1', N'2024-03-15 20:00:24', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (36, 118, 1, N'1', N'2024-03-17 09:12:08', N'1', N'2024-03-17 09:12:08', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (46, 117, 1, N'1', N'2024-10-02 10:16:11', N'1', N'2024-10-02 10:16:11', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (47, 104, 2, N'1', N'2025-01-04 10:40:33', N'1', N'2025-01-04 10:40:33', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (48, 100, 155, N'1', N'2025-04-04 10:41:14', N'1', N'2025-04-04 10:41:14', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (49, 142, 1, N'1', N'2025-07-23 09:11:42', N'1', N'2025-07-23 09:11:42', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (50, 142, 2, N'1', N'2025-10-07 20:50:37', N'1', N'2025-10-07 20:50:37', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (51, 139, 1, N'1', N'2025-12-05 22:36:57', N'1', N'2025-12-05 22:36:57', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (52, 139, 2, N'1', N'2025-12-05 22:37:00', N'1', N'2025-12-05 22:37:00', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (53, 114, 2, N'1', N'2026-01-04 18:15:40', N'1', N'2026-01-04 18:15:40', N'0', 1)
+GO
+INSERT INTO system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (54, 114, 3, N'1', N'2026-01-04 18:16:19', N'1', N'2026-01-04 18:16:19', N'0', 1)
+GO
+SET IDENTITY_INSERT system_user_role OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for system_users
+-- ----------------------------
+DROP TABLE IF EXISTS system_users
+GO
+CREATE TABLE system_users (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    username nvarchar(30)  NOT NULL,
+    password nvarchar(100) DEFAULT '' NOT NULL,
+    nickname nvarchar(30)  NOT NULL,
+    remark nvarchar(500) DEFAULT NULL NULL,
+    dept_id bigint DEFAULT NULL NULL,
+    post_ids nvarchar(255) DEFAULT NULL NULL,
+    email nvarchar(50) DEFAULT '' NULL,
+    mobile nvarchar(11) DEFAULT '' NULL,
+    sex tinyint DEFAULT 0 NULL,
+    avatar nvarchar(512) DEFAULT '' NULL,
+    status tinyint DEFAULT 0 NOT NULL,
+    login_ip nvarchar(50) DEFAULT '' NULL,
+    login_date datetime2 DEFAULT NULL NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+CREATE INDEX idx_system_users_01 ON system_users (username)
+GO
+CREATE INDEX idx_system_users_02 ON system_users (mobile)
+GO
+CREATE INDEX idx_system_users_03 ON system_users (email)
+GO
+CREATE INDEX idx_system_users_04 ON system_users (dept_id)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户ID',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户账号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'username'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'密码',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'password'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户昵称',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'nickname'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'备注',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'remark'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'部门ID',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'dept_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'岗位编号数组',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'post_ids'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户邮箱',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'email'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'手机号码',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'mobile'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户性别',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'sex'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'头像地址',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'avatar'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'帐号状态（0正常 1停用）',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'status'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'最后登录IP',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'login_ip'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'最后登录时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'login_date'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'用户信息表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'system_users'
+GO
+
+-- ----------------------------
+-- Records of system_users
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT system_users ON
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (1, N'admin', N'$2a$04$.vd8nPeLwxt6hnSzmAoAyul8BOLX7Cib6QhcxRe30rfvrIPQHH1OG', N'芋道源码', N'管理员', 103, N'[1,2]', N'13aoteman@126.com', N'18818260272', 1, N'http://test.yudao.iocoder.cn/user/avatar/20251220/blob_1766215463801.jpg', 0, N'0:0:0:0:0:0:0:1', N'2026-04-17 08:47:40', N'admin', N'2021-01-05 17:03:47', NULL, N'2026-04-17 08:47:40', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (100, N'yudao', N'$2a$04$h.aaPKgO.odHepnk5PCsWeEwKdojFWdTItxGKfx1r0e1CSeBzsTJ6', N'芋道', N'不要吓我', 104, N'[1]', N'yudao@iocoder.cn', N'15601691300', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2025-12-15 21:47:26', N'', N'2021-01-07 09:07:17', NULL, N'2025-12-15 21:47:26', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (103, N'yuanma', N'$2a$04$fUBSmjKCPYAUmnMzOb6qE.eZCGPhHi1JmAKclODbfS/O7fHOl2bH6', N'源码', NULL, 106, NULL, N'yuanma@iocoder.cn', N'15601701300', 0, NULL, 0, N'0:0:0:0:0:0:0:1', N'2024-08-11 17:48:12', N'', N'2021-01-13 23:50:35', N'1', N'2025-07-09 23:41:58', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (104, N'test', N'$2a$04$BrwaYn303hjA/6TnXqdGoOLhyHOAA0bVrAFu6.1dJKycqKUnIoRz2', N'测试号', NULL, 107, N'[1,2]', N'111@qq.com', N'15601691200', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2026-01-04 18:09:54', N'', N'2021-01-21 02:13:53', NULL, N'2026-01-04 18:09:54', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (107, N'admin107', N'$2a$10$dYOOBKMO93v/.ReCqzyFg.o67Tqk.bbc2bhrpyBGkIw9aypCtr2pm', N'芋艿', NULL, NULL, NULL, N'', N'15601691300', 0, NULL, 0, N'', NULL, N'1', N'2022-02-20 22:59:33', N'1', N'2025-04-21 14:23:08', N'0', 118)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (108, N'admin108', N'$2a$10$y6mfvKoNYL1GXWak8nYwVOH.kCWqjactkzdoIDgiKl93WN3Ejg.Lu', N'芋艿', NULL, NULL, NULL, N'', N'15601691300', 0, NULL, 0, N'', NULL, N'1', N'2022-02-20 23:00:50', N'1', N'2025-04-21 14:23:08', N'0', 119)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (109, N'admin109', N'$2a$10$JAqvH0tEc0I7dfDVBI7zyuB4E3j.uH6daIjV53.vUS6PknFkDJkuK', N'芋艿', NULL, NULL, NULL, N'', N'15601691300', 0, NULL, 0, N'', NULL, N'1', N'2022-02-20 23:11:50', N'1', N'2025-04-21 14:23:08', N'0', 120)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (110, N'admin110', N'$2a$10$mRMIYLDtRHlf6.9ipiqH1.Z.bh/R9dO9d5iHiGYPigi6r5KOoR2Wm', N'小王', NULL, NULL, NULL, N'', N'15601691300', 0, NULL, 0, N'0:0:0:0:0:0:0:1', N'2024-07-20 22:23:17', N'1', N'2022-02-22 00:56:14', NULL, N'2025-04-21 14:23:08', N'0', 121)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (111, N'test', N'$2a$10$mRMIYLDtRHlf6.9ipiqH1.Z.bh/R9dO9d5iHiGYPigi6r5KOoR2Wm', N'测试用户', NULL, NULL, N'[]', N'', N'', 0, NULL, 0, N'0:0:0:0:0:0:0:1', N'2023-12-30 11:42:17', N'110', N'2022-02-23 13:14:33', NULL, N'2025-04-21 14:23:08', N'0', 121)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (112, N'newobject', N'$2a$04$dB0z8Q819fJWz0hbaLe6B.VfHCjYgWx6LFfET5lyz3JwcqlyCkQ4C', N'新对象', NULL, 100, N'[]', N'', N'15601691235', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2024-03-16 23:11:38', N'1', N'2022-02-23 19:08:03', NULL, N'2025-04-21 14:23:08', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (113, N'aoteman', N'$2a$10$0acJOIk2D25/oC87nyclE..0lzeu9DtQ/n3geP4fkun/zIVRhHJIO', N'芋道1', NULL, NULL, NULL, N'', N'15601691300', 0, NULL, 0, N'127.0.0.1', N'2022-03-19 18:38:51', N'1', N'2022-03-07 21:37:58', N'1', N'2025-05-05 15:30:53', N'0', 122)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (114, N'hrmgr', N'$2a$10$TR4eybBioGRhBmDBWkqWLO6NIh3mzYa8KBKDDB5woiGYFVlRAi.fu', N'hr 小姐姐', NULL, NULL, N'[5]', N'', N'15601691236', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2026-01-04 18:16:01', N'1', N'2022-03-19 21:50:58', NULL, N'2026-01-04 18:16:01', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (115, N'aotemane', N'$2a$04$GcyP0Vyzb2F2Yni5PuIK9ueGxM0tkZGMtDwVRwrNbtMvorzbpNsV2', N'阿呆', N'11222', 102, N'[1,2]', N'7648@qq.com', N'15601691229', 2, NULL, 0, N'', NULL, N'1', N'2022-04-30 02:55:43', N'1', N'2025-04-21 14:23:08', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (117, N'admin123', N'$2a$04$sEtimsHu9YCkYY4/oqElHem2Ijc9ld20eYO6lN.g/21NfLUTDLB9W', N'测试号02', N'1111', 100, N'[2]', N'', N'15601691234', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2024-10-02 10:16:20', N'1', N'2022-07-09 17:40:26', N'1', N'2025-05-14 09:56:04', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (118, N'goudan', N'$2a$04$3suGZjnA6rM5bErf38u1felbgqbsPHGdRG3l9NkxPCEt2ah9Y6aJi', N'狗蛋', NULL, 103, N'[1]', N'', N'15601691239', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2025-11-23 15:28:25', N'1', N'2022-07-09 17:44:43', NULL, N'2025-11-23 15:28:25', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (139, N'wwbwwb', N'$2a$04$FJLIyg8lbPytP29pbZaiU.LesJvCsYfEaHqQfB0pGQhK3e9BeZmLy', N'小秃头', N'123', 108, N'[2,4]', N'', N'', 1, NULL, 0, N'0:0:0:0:0:0:0:1', N'2024-09-10 21:03:58', NULL, N'2024-09-10 21:03:58', N'1', N'2025-12-15 22:38:15', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (141, N'admin1', N'$2a$04$oj6F6d7HrZ70kYVD3TNzEu.m3TPUzajOVuC66zdKna8KRerK1FmVa', N'新用户', NULL, NULL, NULL, N'', N'', 0, N'', 0, N'0:0:0:0:0:0:0:1', N'2025-04-08 13:09:07', N'1', N'2025-04-08 13:09:07', N'1', N'2025-05-14 19:11:48', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (142, N'test01', N'$2a$04$4bCYWZkjxxOC4QE0LY2M9uEEKWeJbLfs489NFtQoyidL5I0FndRaO', N'test01', N'', NULL, N'[]', N'', N'19021719925', 1, N'', 0, N'0:0:0:0:0:0:0:1', N'2025-07-29 19:47:17', N'1', N'2025-07-09 21:07:10', NULL, N'2025-12-02 13:23:11', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (143, N'a00001', N'$2a$04$GhVHFviOw/SsTmiQtifHJesDYFlHMeGK7OWh7aGCCjGGVCmbHVAwa', N'a00001', NULL, 104, NULL, N'', N'', 0, N'', 0, N'0:0:0:0:0:0:0:1', N'2025-12-01 16:10:13', NULL, N'2025-12-01 16:10:13', N'1', N'2025-12-05 21:34:05', N'0', 1)
+GO
+INSERT INTO system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (144, N'aoteman001', N'$2a$04$omQOmhz8OyUFBKw77nr8KOtMp6xdvoQ1gWStjk9r8.OYT3Bv6oEYe', N'aoteman001', NULL, 116, NULL, N'', N'', 0, N'', 1, N'0:0:0:0:0:0:0:1', N'2025-12-01 17:05:27', N'1', N'2025-12-01 17:05:27', N'1', N'2025-12-15 15:55:54', N'0', 1)
+GO
+SET IDENTITY_INSERT system_users OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for yudao_demo01_contact
+-- ----------------------------
+DROP TABLE IF EXISTS yudao_demo01_contact
+GO
+CREATE TABLE yudao_demo01_contact (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    name nvarchar(100) DEFAULT '' NOT NULL,
+    sex tinyint  NOT NULL,
+    birthday datetime2  NOT NULL,
+    description nvarchar(255)  NOT NULL,
+    avatar nvarchar(512) DEFAULT NULL NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'名字',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'性别',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'sex'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'出生年',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'birthday'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'简介',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'description'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'头像',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'avatar'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'示例联系人表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo01_contact'
+GO
+
+-- ----------------------------
+-- Records of yudao_demo01_contact
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT yudao_demo01_contact ON
+GO
+INSERT INTO yudao_demo01_contact (id, name, sex, birthday, description, avatar, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (1, N'土豆', 2, N'2023-11-07 00:00:00', N'<p>天蚕土豆！呀</p>', N'http://127.0.0.1:48080/admin-api/infra/file/4/get/46f8fa1a37db3f3960d8910ff2fe3962ab3b2db87cf2f8ccb4dc8145b8bdf237.jpeg', N'1', N'2023-11-15 23:34:30', N'1', N'2023-11-15 23:47:39', N'0', 1)
+GO
+SET IDENTITY_INSERT yudao_demo01_contact OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for yudao_demo02_category
+-- ----------------------------
+DROP TABLE IF EXISTS yudao_demo02_category
+GO
+CREATE TABLE yudao_demo02_category (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    name nvarchar(100) DEFAULT '' NOT NULL,
+    parent_id bigint  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'名字',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'父级编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'parent_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'示例分类表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo02_category'
+GO
+
+-- ----------------------------
+-- Records of yudao_demo02_category
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT yudao_demo02_category ON
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (1, N'土豆', 0, N'1', N'2023-11-15 23:34:30', N'1', N'2023-11-16 20:24:23', N'0', 1)
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2, N'番茄', 0, N'1', N'2023-11-16 20:24:00', N'1', N'2023-11-16 20:24:15', N'0', 1)
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (3, N'怪怪', 0, N'1', N'2023-11-16 20:24:32', N'1', N'2023-11-16 20:24:32', N'0', 1)
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (4, N'小番茄', 2, N'1', N'2023-11-16 20:24:39', N'1', N'2023-11-16 20:24:39', N'0', 1)
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (5, N'大番茄', 2, N'1', N'2023-11-16 20:24:46', N'1', N'2023-11-16 20:24:46', N'0', 1)
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (6, N'11', 3, N'1', N'2023-11-24 19:29:34', N'1', N'2023-11-24 19:29:34', N'0', 1)
+GO
+INSERT INTO yudao_demo02_category (id, name, parent_id, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (7, N'1', 0, N'1', N'2025-10-01 09:19:20', N'1', N'2025-10-01 09:19:20', N'0', 1)
+GO
+SET IDENTITY_INSERT yudao_demo02_category OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for yudao_demo03_course
+-- ----------------------------
+DROP TABLE IF EXISTS yudao_demo03_course
+GO
+CREATE TABLE yudao_demo03_course (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    student_id bigint  NOT NULL,
+    name nvarchar(100) DEFAULT '' NOT NULL,
+    score tinyint  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'学生编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'student_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'名字',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'分数',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'score'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'学生课程表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_course'
+GO
+
+-- ----------------------------
+-- Records of yudao_demo03_course
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT yudao_demo03_course ON
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2, 2, N'语文', 66, N'1', N'2023-11-16 23:21:49', N'1', N'2024-09-17 10:55:30', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (3, 2, N'数学', 22, N'1', N'2023-11-16 23:21:49', N'1', N'2024-09-17 10:55:30', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (6, 5, N'体育', 23, N'1', N'2023-11-16 23:22:46', N'1', N'2023-11-16 15:44:40', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (7, 5, N'计算机', 11, N'1', N'2023-11-16 23:22:46', N'1', N'2023-11-16 15:44:40', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (8, 5, N'体育', 23, N'1', N'2023-11-16 23:22:46', N'1', N'2023-11-16 15:47:09', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (9, 5, N'计算机', 11, N'1', N'2023-11-16 23:22:46', N'1', N'2023-11-16 15:47:09', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (10, 5, N'体育', 23, N'1', N'2023-11-16 23:22:46', N'1', N'2024-09-17 10:55:28', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (11, 5, N'计算机', 11, N'1', N'2023-11-16 23:22:46', N'1', N'2024-09-17 10:55:28', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (12, 2, N'电脑', 33, N'1', N'2023-11-17 00:20:42', N'1', N'2023-11-16 16:20:45', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (13, 9, N'滑雪', 12, N'1', N'2023-11-17 13:13:20', N'1', N'2024-09-17 10:55:26', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (14, 9, N'滑雪', 12, N'1', N'2023-11-17 13:13:20', N'1', N'2024-09-17 10:55:49', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (15, 5, N'体育', 23, N'1', N'2023-11-16 23:22:46', N'1', N'2024-09-17 18:55:29', N'0', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (16, 5, N'计算机', 11, N'1', N'2023-11-16 23:22:46', N'1', N'2024-09-17 18:55:29', N'0', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (17, 2, N'语文', 66, N'1', N'2023-11-16 23:21:49', N'1', N'2024-09-17 18:55:31', N'0', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (18, 2, N'数学', 22, N'1', N'2023-11-16 23:21:49', N'1', N'2024-09-17 18:55:31', N'0', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (19, 9, N'滑雪', 12, N'1', N'2023-11-17 13:13:20', N'1', N'2025-04-19 02:49:03', N'1', 1)
+GO
+INSERT INTO yudao_demo03_course (id, student_id, name, score, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (20, 9, N'滑雪', 12, N'1', N'2023-11-17 13:13:20', N'1', N'2025-04-19 10:49:04', N'0', 1)
+GO
+SET IDENTITY_INSERT yudao_demo03_course OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for yudao_demo03_grade
+-- ----------------------------
+DROP TABLE IF EXISTS yudao_demo03_grade
+GO
+CREATE TABLE yudao_demo03_grade (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    student_id bigint  NOT NULL,
+    name nvarchar(100) DEFAULT '' NOT NULL,
+    teacher nvarchar(255)  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'学生编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'student_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'名字',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'班主任',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'teacher'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'学生班级表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_grade'
+GO
+
+-- ----------------------------
+-- Records of yudao_demo03_grade
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT yudao_demo03_grade ON
+GO
+INSERT INTO yudao_demo03_grade (id, student_id, name, teacher, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (7, 2, N'三年 2 班', N'周杰伦', N'1', N'2023-11-16 23:21:49', N'1', N'2024-09-17 18:55:31', N'0', 1)
+GO
+INSERT INTO yudao_demo03_grade (id, student_id, name, teacher, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (8, 5, N'华为', N'遥遥领先', N'1', N'2023-11-16 23:22:46', N'1', N'2024-09-17 18:55:29', N'0', 1)
+GO
+INSERT INTO yudao_demo03_grade (id, student_id, name, teacher, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (9, 9, N'小图', N'小娃111', N'1', N'2023-11-17 13:10:23', N'1', N'2025-04-19 10:49:04', N'0', 1)
+GO
+SET IDENTITY_INSERT yudao_demo03_grade OFF
+GO
+COMMIT
+GO
+-- @formatter:on
+
+-- ----------------------------
+-- Table structure for yudao_demo03_student
+-- ----------------------------
+DROP TABLE IF EXISTS yudao_demo03_student
+GO
+CREATE TABLE yudao_demo03_student (
+    id bigint NOT NULL PRIMARY KEY IDENTITY,
+    name nvarchar(100) DEFAULT '' NOT NULL,
+    sex tinyint  NOT NULL,
+    birthday datetime2  NOT NULL,
+    description nvarchar(255)  NOT NULL,
+    creator nvarchar(64) DEFAULT '' NULL,
+    create_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updater nvarchar(64) DEFAULT '' NULL,
+    update_time datetime2 DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted bit DEFAULT 0 NOT NULL,
+    tenant_id bigint DEFAULT 0 NOT NULL
+)
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'名字',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'name'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'性别',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'sex'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'出生日期',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'birthday'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'简介',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'description'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'creator'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'创建时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'create_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新者',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'updater'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'更新时间',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'update_time'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'是否删除',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'deleted'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'租户编号',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student',
+    'COLUMN', N'tenant_id'
+GO
+
+EXEC sp_addextendedproperty
+    'MS_Description', N'学生表',
+    'SCHEMA', N'dbo',
+    'TABLE', N'yudao_demo03_student'
+GO
+
+-- ----------------------------
+-- Records of yudao_demo03_student
+-- ----------------------------
+-- @formatter:off
+BEGIN TRANSACTION
+GO
+SET IDENTITY_INSERT yudao_demo03_student ON
+GO
+INSERT INTO yudao_demo03_student (id, name, sex, birthday, description, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (2, N'小白', 1, N'2023-11-16 00:00:00', N'<p>厉害</p>', N'1', N'2023-11-16 23:21:49', N'1', N'2024-09-17 18:55:31', N'0', 1)
+GO
+INSERT INTO yudao_demo03_student (id, name, sex, birthday, description, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (5, N'大黑', 2, N'2023-11-13 00:00:00', N'<p>你在教我做事?</p>', N'1', N'2023-11-16 23:22:46', N'1', N'2024-09-17 18:55:29', N'0', 1)
+GO
+INSERT INTO yudao_demo03_student (id, name, sex, birthday, description, creator, create_time, updater, update_time, deleted, tenant_id) VALUES (9, N'小花', 1, N'2023-11-07 00:00:00', N'<p>哈哈哈</p>', N'1', N'2023-11-17 00:04:47', N'1', N'2025-04-19 10:49:04', N'0', 1)
+GO
+SET IDENTITY_INSERT yudao_demo03_student OFF
+GO
+COMMIT
+GO
+-- @formatter:on
